@@ -1,7 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
-import DashboardPage from "./components/dashboard/DashboardPage";
-import ProductPage from "./components/products/ProductPage";
+import ProductPageClientSide from "./components/products/ProductPageClientSide";
+import ProductPageServerSide from "./components/products/ProductPageServerSide";
+import ProductPageServerSidePagination from "./components/products/ProductPageServerSidePagination";
 import NotFoundPage from "./components/NotFoundPage";
 import Footer from "./components/Footer";
 
@@ -10,8 +11,13 @@ const App = () => {
 		<div className="">
 			<Header />
 			<Routes>
-				<Route exact path="/dashboard" element={<DashboardPage />} />
-				<Route exact path="/" element={<ProductPage />} />
+				<Route exact path="/" element={<ProductPageClientSide />} />
+				<Route exact path="/pants" element={<ProductPageServerSide />} />
+				<Route
+					exact
+					path="/tshirts"
+					element={<ProductPageServerSidePagination />}
+				/>
 				<Route path="*" element={<NotFoundPage />} />
 			</Routes>
 			<Footer />

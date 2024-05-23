@@ -9,6 +9,7 @@ const Product = ({
 	discountType,
 	discountValue,
 }) => {
+	console.log("Product", name);
 	return (
 		<li className="">
 			<div className="">

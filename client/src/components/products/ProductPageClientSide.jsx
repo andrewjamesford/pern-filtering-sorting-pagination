@@ -4,8 +4,9 @@ import ProductList from "./ProductList";
 import ProductSortOrder from "./ProductSortOrder";
 import Loader from "../Loader";
 import ErrorMessage from "../ErrorMessage";
+import ProductSearch from "./ProductSearch";
 
-const ProductPage = () => {
+const ProductPageClientSide = () => {
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(false);
 	const [products, setProducts] = useState([]);
@@ -22,11 +23,12 @@ const ProductPage = () => {
 			try {
 				setLoading(true);
 				setError(false);
-				const result = await api.getProducts(sort, order);
+				const result = await api.getProductsClientSide();
 				if (!result.ok) {
 					throw new Error("API Error");
 				}
 				const data = await result.json();
+				console.log(data);
 				if (!abortController.signal.aborted) {
 					setProducts(data.products);
 				}
@@ -56,15 +58,16 @@ const ProductPage = () => {
 
 	return (
 		<main className="">
-			{loading && <Loader />}
-			{error && <ErrorMessage message="Error fetching products" />}
+			<ProductSearch />
 			<ProductSortOrder
 				onSortChange={onSortChange}
 				onOrderChange={onOrderChange}
 			/>
+			{error && <ErrorMessage message="Error fetching products" />}
+			{loading && <Loader />}
 			<ProductList products={products} className="" />
 		</main>
 	);
 };
 
-export default ProductPage;
+export default ProductPageClientSide;

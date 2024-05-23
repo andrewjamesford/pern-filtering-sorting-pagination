@@ -1,15 +1,18 @@
 const api = {
-	getProducts: async (sort, order) =>
+	getProductsClientSide: async () =>
+		await new Promise(resolve =>
+			setTimeout(() => {
+				resolve(fetch(`./products.json`));
+			}, 2000)
+		),
+	getProductsServerSide: async (sort, order) =>
 		await fetch(
 			`${import.meta.env.VITE_API_URL}/products?sortOrder=${sort}&direction=${order}`,
 		),
-	getReports: async (accessToken) =>
-		await fetch(`${import.meta.env.VITE_API_URL}/reports`, {
-			headers: {
-				"Content-Type": "application/json",
-				Authorization: `Bearer ${accessToken}`,
-			},
-		}),
+	getProductsServerSidePagination: async (sort, order, page, pageLength) =>
+		await fetch(
+			`${import.meta.env.VITE_API_URL}/products?sortOrder=${sort}&direction=${order}&page=${page}&pageLength=${pageLength}`,
+		),
 };
 
 export default api;
