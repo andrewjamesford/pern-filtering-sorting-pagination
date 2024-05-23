@@ -1,0 +1,51 @@
+{
+  "folders": [
+    {
+      "name": "Client",
+      "path": "./client"
+    },
+    {
+      "name": "Server",
+      "path": "./server"
+    },
+    {
+      "name": "DB",
+      "path": "./db"
+    },
+    {
+      "name": "ROOT",
+      "path": "./"
+    }
+  ],
+  "settings": {
+    "files.exclude": {
+      "node_modules/": true,
+      "packages/": true
+    },
+    "jest.autoEnable": false,
+    "jest.disabledWorkspaceFolders": [
+      "DB",
+      "ROOT"
+    ],
+    "sqltools.connections": [
+      {
+        "previewLimit": 50,
+        "server": "localhost",
+        "port": 5432,
+        "driver": "PostgreSQL",
+        "name": "localdb",
+        "database": "postgres",
+        "username": "postgres",
+        "password": "password"
+      }
+    ]
+  },
+  "extensions": {
+    "recommendations": [
+      "ms-azuretools.vscode-docker",
+      "orta.vscode-jest",
+      "ms-azuretools.vscode-docker",
+      "mtxr.sqltools",
+    ]
+  }
+}
