@@ -1,9 +1,5 @@
-const TableHeaderCell = ({ children, className }) => {
-  return (
-    <th className={`tableHeaderCell ${className || ""}`}>
-      {children}
-    </th>
-  );
+const TableHeaderCell = ({ children }) => {
+	return <th className="">{children}</th>;
 };
 
 export default TableHeaderCell;

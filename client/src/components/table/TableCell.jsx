@@ -1,8 +1,5 @@
-
-const TableCell = ({ children, className }) => {
-  return (
-    <td className={`${className || ""} tableCell}`}>{children}</td>
-  );
+const TableCell = ({ children }) => {
+	return <td className="">{children}</td>;
 };
 
 export default TableCell;

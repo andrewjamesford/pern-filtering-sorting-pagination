@@ -1,10 +1,9 @@
-
-const Table = ({ children, className }) => {
-  return (
-    <div className={`${className || ""} container`}>
-      <table className="table">{children}</table>
-    </div>
-  );
+const Table = ({ children }) => {
+	return (
+		<div className="">
+			<table className="">{children}</table>
+		</div>
+	);
 };
 
 export default Table;
