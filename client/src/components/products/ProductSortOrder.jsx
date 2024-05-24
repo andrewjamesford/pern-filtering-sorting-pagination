@@ -1,8 +1,8 @@
 const ProductSortOrder = ({ onSortChange, onOrderChange }) => {
 	return (
-		<div className="flex w-full py-4">
+		<div className="flex w-full py-8">
 			<div className="w-1/2 flex items-center justify-center">
-				<div className=" border-b-2 border-black appearance-none bg-transparent py-2">
+				<div className="border-b-2 border-black appearance-none bg-transparent py-2">
 					<label htmlFor="productSort" className="mr-2">
 						Sort:
 					</label>
@@ -20,7 +20,7 @@ const ProductSortOrder = ({ onSortChange, onOrderChange }) => {
 				</div>
 			</div>
 			<div className="w-1/2 flex items-center justify-center">
-				<div className=" border-b-2 border-black appearance-none bg-transparent py-2">
+				<div className="border-b-2 border-black appearance-none bg-transparent py-2">
 					<label htmlFor="productOrder" className="mr-2">
 						Order:
 					</label>
