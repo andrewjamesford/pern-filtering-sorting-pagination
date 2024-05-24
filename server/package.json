@@ -8,7 +8,8 @@
     "start:dev": "nodemon --inspect=0.0.0.0:9229 index.js",
     "test": "jest --watchAll --colors --verbose",
     "lint:js": "eslint .",
-    "prettier:check": "prettier --check '**/*.js'"
+    "prettier:check": "prettier --check .",
+    "prettier:write": "prettier --write ."
   },
   "author": "DI",
   "license": "ISC",
@@ -31,7 +32,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.1",
     "jest": "^27.3.1",
-    "prettier": "^2.4.1",
+    "prettier": "3.2.5",
     "jest-openapi": "^0.14.0",
     "nodemon": "^2.0.13",
     "supertest": "^6.1.6"
