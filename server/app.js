@@ -11,7 +11,7 @@ const reportRouter = require("./reports/report.router");
 const errorHandlerMiddleware = require("./middleware/errorHandlerMiddleware");
 
 const swaggerDocument = yaml.load(
-  fs.readFileSync(path.join(__dirname, "./apispec.yaml"), "utf8")
+	fs.readFileSync(path.join(__dirname, "./apispec.yaml"), "utf8"),
 );
 
 // middleware

@@ -5,31 +5,31 @@ const queryParamValidationMiddleware = require("../middleware/queryParamValidati
 const productRepository = require("./product.repository");
 
 const queryParamsSchema = Joi.object().keys({
-  sortOrder: Joi.string().allow(null, ""),
-  direction: Joi.string().allow(null, ""),
+	sortOrder: Joi.string().allow(null, ""),
+	direction: Joi.string().allow(null, ""),
 });
 
 router.get(
-  "/",
-  queryParamValidationMiddleware(queryParamsSchema),
-  async (req, res, next) => {
-    try {
-      const { sortOrder = "id", direction = "asc" } = req.query;
+	"/",
+	queryParamValidationMiddleware(queryParamsSchema),
+	async (req, res, next) => {
+		try {
+			const { sortOrder = "id", direction = "asc" } = req.query;
 
-      const products = await productRepository.getProducts(
-        sortOrder,
-        direction
-      );
+			const products = await productRepository.getProducts(
+				sortOrder,
+				direction,
+			);
 
-      const responseResults = {
-        products,
-      };
+			const responseResults = {
+				products,
+			};
 
-      return res.json(responseResults);
-    } catch (err) {
-      next(err);
-    }
-  }
+			return res.json(responseResults);
+		} catch (err) {
+			next(err);
+		}
+	},
 );
 
 module.exports = router;
