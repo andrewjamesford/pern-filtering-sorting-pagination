@@ -28,7 +28,6 @@ const ProductPageClientSide = () => {
 					throw new Error("API Error");
 				}
 				const data = await result.json();
-				console.log(data);
 				if (!abortController.signal.aborted) {
 					setProducts(data.products);
 				}
@@ -64,8 +63,7 @@ const ProductPageClientSide = () => {
 				onOrderChange={onOrderChange}
 			/>
 			{error && <ErrorMessage message="Error fetching products" />}
-			{loading && <Loader />}
-			<ProductList products={products} />
+			{loading ? <Loader /> : <ProductList products={products} />}
 		</main>
 	);
 };

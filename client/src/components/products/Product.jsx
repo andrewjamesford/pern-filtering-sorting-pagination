@@ -12,28 +12,27 @@ const Product = ({
 	return (
 		<li className="">
 			<div className="">
-				<div>
-					{imageName ? (
-						<img
-							src={`./img/${imageName}`}
-							alt={imageDescription}
-							className=""
-						/>
-					) : (
-						<img src="./img/dog-photo-default.png" alt="Default" className="" />
-					)}
-					{discountValue && discountType && (
-						<DiscountBadge
-							className="badge"
-							discountValue={discountValue}
-							discountType={discountType}
-						/>
-					)}
+				{imageName ? (
+					<img
+						src={`./img/products/${imageName}.png`}
+						alt={imageDescription}
+						className=""
+					/>
+				) : (
+					<img src="./img/products/default.png" alt="Default" className="" />
+				)}
+				{discountValue && discountType && (
+					<DiscountBadge
+						className="badge"
+						discountValue={discountValue}
+						discountType={discountType}
+					/>
+				)}
+				<h3 className="text-lg h-2 uppercase font-bold">{name}</h3>
+				<div className="py-4 prose">
+					<p className="">{description}</p>
+					<p className="space-y-2 proportional-nums text-sm">${price}</p>
 				</div>
-				<h3>{name}</h3>
-				<p>Price {price}</p>
-				<p className="">{description}</p>
-				<button className="">Add to Cart</button>
 			</div>
 		</li>
 	);

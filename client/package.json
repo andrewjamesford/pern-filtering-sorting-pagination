@@ -4,7 +4,7 @@
 	"description": "A demo full-stack app using JWT (JSON Web Tokens) to login and access a restricted section of the app.",
 	"type": "module",
 	"scripts": {
-		"dev": "vite dev",
+		"dev": "vite -d --logLevel info",
 		"build": "vite build",
 		"lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
 		"preview": "vite preview",
@@ -19,6 +19,7 @@
 		"react-router-dom": "^6.23.1"
 	},
 	"devDependencies": {
+		"@tailwindcss/typography": "^0.5.13",
 		"@types/react": "^18.2.66",
 		"@types/react-dom": "^18.2.22",
 		"@vitejs/plugin-react": "^4.2.1",
@@ -30,7 +31,7 @@
 		"eslint-plugin-react-refresh": "^0.4.6",
 		"postcss": "^8.4.38",
 		"prettier": "3.2.5",
-		"tailwindcss": "^3.4.3",
+		"tailwindcss": "^3.4",
 		"vite": "^5.2.0"
 	}
 }

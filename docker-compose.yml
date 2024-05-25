@@ -5,6 +5,7 @@ services:
       context: ./client
     ports:
       - "4000:4000"
+      - "4010:4010"
       - "9222:9222"
     depends_on:
       - server

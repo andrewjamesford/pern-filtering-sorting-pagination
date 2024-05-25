@@ -2,26 +2,30 @@ import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
 	return (
-		<header className="flex flex-col items-center space-y-4">
-			<Link to="/" className="block w-30 h-20">
-				<img src="./img/puffer_logo.png" alt="Puffer Logo" />
+		<header className="flex flex-col items-center">
+			<Link to="/" className="block">
+				<img
+					src="./img/puffer-logo.png"
+					alt="Puffer Logo"
+					className="aspect-ratio max-w-40 mt-4"
+				/>
 			</Link>
 
 			<nav id="main-nav" className="py-4 w-50">
-				<ul className="md:flex md:space-x-4">
+				<ul className="md:flex md:space-x-4 text-center uppercase">
 					<li>
-						<NavLink to="/products" className="block">
-							PUFFERS
+						<NavLink to="/" className="block">
+							Puffers
 						</NavLink>
 					</li>
 					<li>
-						<NavLink to="/products" className="block ">
-							PANTS
+						<NavLink to="/pants" className="block ">
+							Pants
 						</NavLink>
 					</li>
 					<li>
-						<NavLink to="/products" className="block">
-							T-SHIRTS
+						<NavLink to="/tshirts" className="block">
+							T-Shirts
 						</NavLink>
 					</li>
 				</ul>
@@ -29,7 +33,7 @@ const Header = () => {
 
 			<nav
 				id="secondary-nav"
-				className="fixed top-0 right-0 pr-4 md:flex md:space-x-4"
+				className="fixed top-0 right-0 pt-4 pr-4 md:flex md:space-x-4"
 			>
 				<Link to="/" className="block w-6 h-6 mb-4">
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">

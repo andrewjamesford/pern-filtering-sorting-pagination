@@ -1,15 +1,13 @@
 const ProductSortOrder = ({ onSortChange, onOrderChange }) => {
 	return (
-		<div className="flex w-full py-8">
-			<div className="w-1/2 flex items-center justify-center">
-				<div className="border-b-2 border-black appearance-none bg-transparent py-2">
-					<label htmlFor="productSort" className="mr-2">
-						Sort:
-					</label>
+		<div className="flex flex-col items-center">
+			<div className="grid grid-cols-1 md:grid-cols-2 w-full max-w-5xl py-10 md:py-5 items-center gap-4 px-4 lg:px-0">
+				<div className="w-full border-b-2 border-black appearance-none bg-transparent py-2 grid grid-cols-2 mb-4">
+					<label htmlFor="productSort">Sort:</label>
 					<select
 						id="productSort"
 						name="productSort"
-						className="border-none"
+						className="border-none justify-self-end"
 						onChange={onSortChange}
 					>
 						<option value="name">Name</option>
@@ -18,16 +16,12 @@ const ProductSortOrder = ({ onSortChange, onOrderChange }) => {
 						<option value="discountAmount">Discount Amount</option>
 					</select>
 				</div>
-			</div>
-			<div className="w-1/2 flex items-center justify-center">
-				<div className="border-b-2 border-black appearance-none bg-transparent py-2">
-					<label htmlFor="productOrder" className="mr-2">
-						Order:
-					</label>
+				<div className="w-full border-b-2 border-black appearance-none bg-transparent py-2 grid grid-cols-2 mb-4">
+					<label htmlFor="productOrder">Order:</label>
 					<select
 						id="productOrder"
 						name="productOrder"
-						className="border-none"
+						className="border-none justify-self-end"
 						onChange={onOrderChange}
 					>
 						<option value="ASC">Ascending</option>
