@@ -46,6 +46,7 @@
       "orta.vscode-jest",
       "ms-azuretools.vscode-docker",
       "mtxr.sqltools",
+      "vasubasraj.flashpost",
     ]
   }
 }

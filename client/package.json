@@ -1,10 +1,10 @@
 {
-	"name": "jwt-web-tokens/client",
+	"name": "jwt-web-tokens-client",
 	"version": "1.0.0",
 	"description": "A demo full-stack app using JWT (JSON Web Tokens) to login and access a restricted section of the app.",
 	"type": "module",
 	"scripts": {
-		"dev": "vite -d --logLevel info",
+		"dev": "vite -d",
 		"build": "vite build",
 		"lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
 		"preview": "vite preview",
