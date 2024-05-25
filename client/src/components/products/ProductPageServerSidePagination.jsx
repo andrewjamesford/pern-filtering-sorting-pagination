@@ -4,6 +4,7 @@ import ProductList from "./ProductList";
 import ProductSortOrder from "./ProductSortOrder";
 import Loader from "../Loader";
 import ErrorMessage from "../ErrorMessage";
+import ProductSearch from "./ProductSearch";
 
 const ProductPageServerSidePagination = () => {
 	const [loading, setLoading] = useState(false);
@@ -11,6 +12,8 @@ const ProductPageServerSidePagination = () => {
 	const [products, setProducts] = useState([]);
 	const [sort, setSort] = useState("id");
 	const [order, setOrder] = useState("asc");
+	const [page, setPage] = useState(1);
+	const [pageLength, setPageLength] = useState(5);
 
 	useEffect(() => {
 		// We use AbortController (https://developer.mozilla.org/en-US/docs/Web/API/AbortController)
@@ -22,7 +25,12 @@ const ProductPageServerSidePagination = () => {
 			try {
 				setLoading(true);
 				setError(false);
-				const result = await api.getProducts(sort, order);
+				const result = await api.getProductsServerSidePagination(
+					sort,
+					order,
+					page,
+					pageLength,
+				);
 				if (!result.ok) {
 					throw new Error("API Error");
 				}
@@ -54,15 +62,23 @@ const ProductPageServerSidePagination = () => {
 		setOrder(e.target.value + "");
 	};
 
+	const onPageChange = (e) => {
+		setPage(Number(e.target.value));
+	};
+
+	const onPageLengthChange = (e) => {
+		setPageLength(Number(e.target.value));
+	};
+
 	return (
-		<main className="">
+		<main className="flex flex-col">
+			<ProductSearch />
 			<ProductSortOrder
 				onSortChange={onSortChange}
 				onOrderChange={onOrderChange}
 			/>
-			{loading && <Loader />}
 			{error && <ErrorMessage message="Error fetching products" />}
-			<ProductList products={products} className="" />
+			{loading ? <Loader /> : <ProductList products={products} />}
 		</main>
 	);
 };

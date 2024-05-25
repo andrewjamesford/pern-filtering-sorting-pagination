@@ -13,7 +13,6 @@ const ProductSortOrder = ({ onSortChange, onOrderChange }) => {
 						<option value="name">Name</option>
 						<option value="description">Description</option>
 						<option value="price">Price</option>
-						<option value="discountAmount">Discount Amount</option>
 					</select>
 				</div>
 				<div className="w-full border-b-2 border-black appearance-none bg-transparent py-2 grid grid-cols-2 mb-4">

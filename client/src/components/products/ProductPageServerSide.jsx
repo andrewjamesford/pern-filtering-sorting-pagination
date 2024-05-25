@@ -4,6 +4,7 @@ import ProductList from "./ProductList";
 import ProductSortOrder from "./ProductSortOrder";
 import Loader from "../Loader";
 import ErrorMessage from "../ErrorMessage";
+import ProductSearch from "./ProductSearch";
 
 const ProductPageServerSide = () => {
 	const [loading, setLoading] = useState(false);
@@ -22,7 +23,7 @@ const ProductPageServerSide = () => {
 			try {
 				setLoading(true);
 				setError(false);
-				const result = await api.getProducts(sort, order);
+				const result = await api.getProductsServerSide(sort, order);
 				if (!result.ok) {
 					throw new Error("API Error");
 				}
@@ -55,14 +56,14 @@ const ProductPageServerSide = () => {
 	};
 
 	return (
-		<main className="">
+		<main className="flex flex-col">
+			<ProductSearch />
 			<ProductSortOrder
 				onSortChange={onSortChange}
 				onOrderChange={onOrderChange}
 			/>
-			{loading && <Loader />}
 			{error && <ErrorMessage message="Error fetching products" />}
-			<ProductList products={products} className="" />
+			{loading ? <Loader /> : <ProductList products={products} />}
 		</main>
 	);
 };

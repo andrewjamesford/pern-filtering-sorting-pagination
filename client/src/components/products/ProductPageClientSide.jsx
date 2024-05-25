@@ -29,7 +29,19 @@ const ProductPageClientSide = () => {
 				}
 				const data = await result.json();
 				if (!abortController.signal.aborted) {
-					setProducts(data.products);
+					// Client-side sorting
+					const sortProductsBy = data.products.sort((a, b) => {
+						if (typeof a[sort] === "number" && typeof b[sort] === "number") {
+							return a[sort] - b[sort];
+						} else {
+							return a[sort].localeCompare(b[sort]);
+						}
+					});
+					// Client-side ordering
+					if (order.toLowerCase() === "desc") {
+						sortProductsBy.reverse();
+					}
+					setProducts(sortProductsBy);
 				}
 			} catch (error) {
 				if (!abortController.signal.aborted) {
@@ -55,9 +67,20 @@ const ProductPageClientSide = () => {
 		setOrder(e.target.value + "");
 	};
 
+	const onSearchChange = (search) => {
+		const searchValue = search.toLowerCase();
+		const filteredProducts = products.filter((product) => {
+			return (
+				product.name.toLowerCase().includes(searchValue) ||
+				product.category.toLowerCase().includes(searchValue)
+			);
+		});
+		setProducts(filteredProducts);
+	};
+
 	return (
 		<main className="flex flex-col">
-			<ProductSearch />
+			<ProductSearch onSearchChange={onSearchChange} />
 			<ProductSortOrder
 				onSortChange={onSortChange}
 				onOrderChange={onOrderChange}
