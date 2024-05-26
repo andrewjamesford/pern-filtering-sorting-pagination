@@ -12,6 +12,7 @@ const ProductPageClientSide = () => {
 	const [products, setProducts] = useState([]);
 	const [sort, setSort] = useState("id");
 	const [order, setOrder] = useState("asc");
+	const [search, setSearch] = useState("");
 
 	useEffect(() => {
 		// We use AbortController (https://developer.mozilla.org/en-US/docs/Web/API/AbortController)
@@ -67,12 +68,18 @@ const ProductPageClientSide = () => {
 		setOrder(e.target.value + "");
 	};
 
-	const onSearchChange = (search) => {
-		const searchValue = search.toLowerCase();
+	const onSearchChange = (searchInput) => {
+		const searchValue = searchInput.toLowerCase();
+
+		if (!searchValue) {
+			setSearch("");
+			return;
+		}
+
 		const filteredProducts = products.filter((product) => {
 			return (
 				product.name.toLowerCase().includes(searchValue) ||
-				product.category.toLowerCase().includes(searchValue)
+				product.description.toLowerCase().includes(searchValue)
 			);
 		});
 		setProducts(filteredProducts);
@@ -80,7 +87,7 @@ const ProductPageClientSide = () => {
 
 	return (
 		<main className="flex flex-col">
-			<ProductSearch onSearchChange={onSearchChange} />
+			<ProductSearch handleSearch={onSearchChange} search={search} />
 			<ProductSortOrder
 				onSortChange={onSortChange}
 				onOrderChange={onOrderChange}

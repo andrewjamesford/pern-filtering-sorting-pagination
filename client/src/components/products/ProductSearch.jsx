@@ -1,16 +1,23 @@
-const ProductSearch = ({ search, setSearch, handleSearch }) => {
+import { useState } from "react";
+const ProductSearch = ({ search = "", handleSearch }) => {
+	const [productSearch, setProductSearch] = useState(search);
+
+	const onSearchButtonClick = () => {
+		// handleSearch(productSearch);
+	};
+
 	return (
 		<div className="w-full bg-black flex justify-center p-4 my">
 			<input
-				type="text"
-				value={search}
-				onChange={(e) => setSearch(e.target.value)}
+				type="search"
+				value={productSearch}
+				onChange={(e) => setProductSearch(e.target.value)}
 				placeholder="Search products..."
 				className="w-full max-w-md rounded-full py-2 px-4 bg-white"
 			/>
 			<button
 				className="ml-2 bg-white p-2 rounded-full block w-10 h-10"
-				onClick={handleSearch}
+				onClick={() => onSearchButtonClick}
 			>
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
 					{/* <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--> */}
