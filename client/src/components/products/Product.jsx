@@ -17,7 +17,7 @@ const Product = ({
 					<img
 						src={`./img/products/${imageName}.png`}
 						alt={imageDescription}
-						className=""
+						className="rounded-md"
 					/>
 				) : (
 					<img src="./img/products/default.png" alt="Default" className="" />

@@ -3,7 +3,7 @@ const ProductSearch = ({ search = "", handleSearch }) => {
 	const [productSearch, setProductSearch] = useState(search);
 
 	const onSearchButtonClick = () => {
-		// handleSearch(productSearch);
+		handleSearch(productSearch);
 	};
 
 	return (
@@ -11,13 +11,29 @@ const ProductSearch = ({ search = "", handleSearch }) => {
 			<input
 				type="search"
 				value={productSearch}
-				onChange={(e) => setProductSearch(e.target.value)}
+				onChange={(e) => {
+					setProductSearch(e.target.value);
+				}}
+				onBlur={(e) => {
+					if (e.target.value === "") {
+						// On leave of focus check if search is empty
+						handleSearch("");
+					}
+				}}
+				minLength={2}
+				required
 				placeholder="Search products..."
 				className="w-full max-w-md rounded-full py-2 px-4 bg-white"
+				onKeyDown={(e) => {
+					if (e.key === "Enter") {
+						onSearchButtonClick();
+					}
+				}}
 			/>
 			<button
 				className="ml-2 bg-white p-2 rounded-full block w-10 h-10"
-				onClick={() => onSearchButtonClick}
+				onClick={onSearchButtonClick}
+				type="submit"
 			>
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
 					{/* <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--> */}

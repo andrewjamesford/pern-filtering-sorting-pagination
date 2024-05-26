@@ -9,6 +9,7 @@ const ProductSortOrder = ({ onSortChange, onOrderChange }) => {
 						name="productSort"
 						className="border-none justify-self-end"
 						onChange={onSortChange}
+						defaultValue={"name"}
 					>
 						<option value="name">Name</option>
 						<option value="description">Description</option>
@@ -22,9 +23,10 @@ const ProductSortOrder = ({ onSortChange, onOrderChange }) => {
 						name="productOrder"
 						className="border-none justify-self-end"
 						onChange={onOrderChange}
+						defaultValue={"asc"}
 					>
-						<option value="ASC">Ascending</option>
-						<option value="DESC">Descending</option>
+						<option value="asc">Ascending</option>
+						<option value="desc">Descending</option>
 					</select>
 				</div>
 			</div>

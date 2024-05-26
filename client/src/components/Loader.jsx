@@ -1,6 +1,9 @@
 const Loader = () => {
 	return (
-		<div title="Loading" className="flex justify-center p-10">
+		<div
+			title="Loading"
+			className="flex justify-center pt-36 pb-52 w-full min-h-fit"
+		>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 512 512"

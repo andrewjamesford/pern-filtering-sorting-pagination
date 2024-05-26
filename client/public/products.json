@@ -3,7 +3,7 @@
 		{
 			"id": "68b3edba-19a3-4a97-87d6-c718546be472",
 			"name": "Kugelfisch_2",
-			"description": "This is the description for Product_0",
+			"description": "This is the description for Kugelfisch_2",
 			"price": 652.41,
 			"discount_amount": 67.58,
 			"product_category_id": "category_0",
@@ -12,7 +12,7 @@
 		{
 			"id": "9cd6fbf6-7418-419e-b12c-c5aab2e4e056",
 			"name": "Kugelfisch_3",
-			"description": "This is the description for Product_1",
+			"description": "This is the description for Kugelfisch_3",
 			"price": 858.88,
 			"discount_amount": 43.99,
 			"product_category_id": "category_2",
@@ -21,7 +21,7 @@
 		{
 			"id": "c72bfb4d-03b1-42d5-8232-88510e94d127",
 			"name": "Pesce palla_1",
-			"description": "This is the description for Product_2",
+			"description": "Pesce palla_1 is the name of this.",
 			"price": 137.37,
 			"discount_amount": 68.79,
 			"product_category_id": "category_4",
@@ -39,7 +39,7 @@
 		{
 			"id": "0265e051-d682-4d21-b3be-9622fa45a2ec",
 			"name": "pufferikala_4",
-			"description": "This is the description for Product_4",
+			"description": "This is the description for pufferikala",
 			"price": 767.35,
 			"discount_amount": 64.56,
 			"product_category_id": "category_1",
@@ -66,7 +66,7 @@
 		{
 			"id": "f6799dff-3dc2-4c47-8820-6357fa6e6012",
 			"name": "Fish_2",
-			"description": "This is the description for Product_7",
+			"description": "This is the description for Fish_2",
 			"price": 589.9,
 			"discount_amount": 34.55,
 			"product_category_id": "category_7",
@@ -111,7 +111,7 @@
 		{
 			"id": "b1cb0678-34b8-4e30-902d-0dd40b1de9b7",
 			"name": "Puffer_2",
-			"description": "This is the description for Product_12",
+			"description": "Puffer_2 this is",
 			"price": 921.23,
 			"discount_amount": 17.5,
 			"product_category_id": "category_7",
@@ -156,7 +156,7 @@
 		{
 			"id": "d22b80e5-e6b7-41fa-9e91-c3152597e07b",
 			"name": "Puffer_6",
-			"description": "This is the description for Product_17",
+			"description": "This is the Puffer_6",
 			"price": 516.99,
 			"discount_amount": 10.43,
 			"product_category_id": "category_2",

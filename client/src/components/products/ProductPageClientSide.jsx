@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import api from "../../api";
 import ProductList from "./ProductList";
@@ -10,9 +11,10 @@ const ProductPageClientSide = () => {
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(false);
 	const [products, setProducts] = useState([]);
-	const [sort, setSort] = useState("id");
+	const [sort, setSort] = useState("name");
 	const [order, setOrder] = useState("asc");
 	const [search, setSearch] = useState("");
+	const [origData, setOrigData] = useState([]);
 
 	useEffect(() => {
 		// We use AbortController (https://developer.mozilla.org/en-US/docs/Web/API/AbortController)
@@ -29,20 +31,10 @@ const ProductPageClientSide = () => {
 					throw new Error("API Error");
 				}
 				const data = await result.json();
+				setOrigData(data.products);
 				if (!abortController.signal.aborted) {
-					// Client-side sorting
-					const sortProductsBy = data.products.sort((a, b) => {
-						if (typeof a[sort] === "number" && typeof b[sort] === "number") {
-							return a[sort] - b[sort];
-						} else {
-							return a[sort].localeCompare(b[sort]);
-						}
-					});
-					// Client-side ordering
-					if (order.toLowerCase() === "desc") {
-						sortProductsBy.reverse();
-					}
-					setProducts(sortProductsBy);
+					const sortedProducts = sortOrder(data.products, sort, order);
+					setProducts(sortedProducts);
 				}
 			} catch (error) {
 				if (!abortController.signal.aborted) {
@@ -58,21 +50,46 @@ const ProductPageClientSide = () => {
 		fetchData();
 
 		return () => abortController.abort();
-	}, [sort, order]);
+	}, []);
+
+	const sortOrder = (dataVal, sortVal, orderVal) => {
+		if (!dataVal || !dataVal.length) {
+			return dataVal;
+		}
+		// Client-side sorting
+		const sortProductsBy = dataVal.sort((a, b) => {
+			if (typeof a[sortVal] === "number" && typeof b[sortVal] === "number") {
+				return a[sortVal] - b[sortVal];
+			} else {
+				return a[sortVal].localeCompare(b[sortVal]);
+			}
+		});
+		// Client-side ordering
+		if (orderVal.toLowerCase() === "desc") {
+			sortProductsBy.reverse();
+		}
+
+		return sortProductsBy;
+	};
 
 	const onSortChange = (e) => {
-		setSort(e.target.value + "");
+		const sortVal = e.target.value + "";
+		setSort(sortVal);
+		setProducts(sortOrder(products, sortVal, order));
 	};
 
 	const onOrderChange = (e) => {
-		setOrder(e.target.value + "");
+		const orderVal = e.target.value + "";
+		setOrder(orderVal);
+		setProducts(sortOrder(products, sort, orderVal));
 	};
 
 	const onSearchChange = (searchInput) => {
 		const searchValue = searchInput.toLowerCase();
 
-		if (!searchValue) {
+		if (searchValue === "") {
 			setSearch("");
+			setProducts(origData);
 			return;
 		}
 
@@ -82,7 +99,8 @@ const ProductPageClientSide = () => {
 				product.description.toLowerCase().includes(searchValue)
 			);
 		});
-		setProducts(filteredProducts);
+		const sortedProducts = sortOrder(filteredProducts, sort, order);
+		setProducts(sortedProducts);
 	};
 
 	return (
