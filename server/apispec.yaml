@@ -93,31 +93,16 @@ components:
           type: string
         price:
           type: string
-        categoryName:
-          type: string
-          nullable: true
         imageName:
           type: string
           nullable: true
-        imageDescription:
-          type: string
-          nullable: true
-        discountValue:
-          type: number
-          nullable: true
-        discountType:
-          type: string
-          nullable: true
+
       required:
         - id
         - name
         - description
         - price
-        - categoryName
         - imageName
-        - imageDescription
-        - discountValue
-        - discountType
     Error:
       type: object
       properties:

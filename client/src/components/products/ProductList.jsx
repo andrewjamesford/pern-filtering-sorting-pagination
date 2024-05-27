@@ -12,10 +12,7 @@ const ProductList = ({ products }) => {
 							name={product.name}
 							description={product.description}
 							price={product.price}
-							imageName={product.product_image_id}
-							imageDescription={product.imageDescription}
-							discountValue={product.discountValue}
-							discountType={product.discountType}
+							imageName={product.imageName}
 						/>
 					))}
 			</ul>

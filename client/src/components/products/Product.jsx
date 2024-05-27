@@ -1,22 +1,16 @@
-const Product = ({
-	name,
-	description,
-	price = 0,
-	imageName,
-	imageDescription,
-}) => {
+const Product = ({ name, description, price = 0, imageName }) => {
 	// Set to NZD currency
 	const formattedPrice = new Intl.NumberFormat("en-NZ", {
 		style: "currency",
 		currency: "NZD",
-	}).format(price);
+	}).format(isNaN(price) ? 0 : price);
 	return (
-		<li className="">
-			<div className="">
+		<li>
+			<div>
 				{imageName ? (
 					<img
 						src={`./img/products/${imageName}.png`}
-						alt={imageDescription}
+						alt={description}
 						className="rounded-md"
 					/>
 				) : (
