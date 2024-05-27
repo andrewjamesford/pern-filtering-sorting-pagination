@@ -16,7 +16,8 @@ const ProductSearch = ({ search = "", handleSearch }) => {
 				}}
 				onBlur={(e) => {
 					if (e.target.value === "") {
-						// On leave of focus check if search is empty
+						// On leave of focus check if search is empty to
+						// handle default search type "X" button
 						handleSearch("");
 					}
 				}}
