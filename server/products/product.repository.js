@@ -3,20 +3,15 @@ const db = require("../db");
 module.exports = {
 	getProducts: async (sortOrder, direction) => {
 		try {
-			let sortOrderParam = "p.id";
-
-			if (sortOrder.toLowerCase() === "name") {
-				sortOrderParam = "p.name";
-			}
-			if (sortOrder.toLowerCase() === "description") {
-				sortOrderParam = "p.description";
-			}
-			if (sortOrder.toLowerCase() === "price") {
-				sortOrderParam = "p.price";
+			let sortOrderParam = "p.name";
+			const validSortOrders = ["name", "description", "price"];
+			if (validSortOrders.includes(sortOrder.toLowerCase())) {
+				sortOrderParam = `p.${sortOrder.toLowerCase()}`;
 			}
 
+			let directionParam = "ASC";
 			if (direction.toLowerCase() === "desc") {
-				sortOrderParam = sortOrderParam + " DESC";
+				directionParam = "DESC";
 			}
 
 			const result = await db.query(
@@ -28,8 +23,7 @@ module.exports = {
           pi.name AS "imageName"
         FROM product p
         LEFT JOIN product_image pi ON p.product_image_id = pi.id
-        ORDER BY $1`,
-				[sortOrderParam]
+        ORDER BY ${sortOrderParam} ${directionParam}`
 			);
 			return result.rows;
 		} catch (error) {
@@ -38,20 +32,15 @@ module.exports = {
 	},
 	getProductsPaginated: async (sortOrder, direction, page, pageSize) => {
 		try {
-			let sortOrderParam = "p.id";
-
-			if (sortOrder.toLowerCase() === "name") {
-				sortOrderParam = "p.name";
-			}
-			if (sortOrder.toLowerCase() === "description") {
-				sortOrderParam = "p.description";
-			}
-			if (sortOrder.toLowerCase() === "price") {
-				sortOrderParam = "p.price";
+			let sortOrderParam = "p.name";
+			const validSortOrders = ["name", "description", "price"];
+			if (validSortOrders.includes(sortOrder.toLowerCase())) {
+				sortOrderParam = `p.${sortOrder.toLowerCase()}`;
 			}
 
+			let directionParam = "ASC";
 			if (direction.toLowerCase() === "desc") {
-				sortOrderParam = sortOrderParam + " DESC";
+				directionParam = "DESC";
 			}
 
 			// Calculate the offset (how many rows to skip)
@@ -66,10 +55,10 @@ module.exports = {
               pi.name AS "imageName"
             FROM product p
             LEFT JOIN product_image pi ON p.product_image_id = pi.id
-            ORDER BY $3
+            ORDER BY ${sortOrderParam} ${directionParam}
             LIMIT $1
 						OFFSET $2`,
-				[pageSize, offset, sortOrderParam]
+				[pageSize, offset]
 			);
 			// Query to get the total number of records
 			const totalRecordsResult = await db.query(
