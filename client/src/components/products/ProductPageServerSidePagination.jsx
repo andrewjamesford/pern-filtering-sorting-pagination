@@ -5,15 +5,20 @@ import ProductSortOrder from "./ProductSortOrder";
 import Loader from "../Loader";
 import ErrorMessage from "../ErrorMessage";
 import ProductSearch from "./ProductSearch";
+import ProductPagination from "./ProductPagination";
+import ProductShow from "./ProductShow";
 
 const ProductPageServerSidePagination = () => {
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(false);
 	const [products, setProducts] = useState([]);
-	const [sort, setSort] = useState("id");
+	const [sort, setSort] = useState("name");
 	const [order, setOrder] = useState("asc");
 	const [page, setPage] = useState(1);
-	const [pageLength, setPageLength] = useState(5);
+	const [pageSize, setPageSize] = useState(5);
+	const [currentPage, setCurrentPage] = useState(1);
+	const [totalPages, setTotalPages] = useState(1);
+	const [totalRecords, setTotalRecords] = useState(0);
 
 	useEffect(() => {
 		// We use AbortController (https://developer.mozilla.org/en-US/docs/Web/API/AbortController)
@@ -29,14 +34,17 @@ const ProductPageServerSidePagination = () => {
 					sort,
 					order,
 					page,
-					pageLength,
+					pageSize,
 				);
 				if (!result.ok) {
 					throw new Error("API Error");
 				}
 				const data = await result.json();
 				if (!abortController.signal.aborted) {
-					setProducts(data.products);
+					setProducts(data.products.data);
+					setCurrentPage(data.products.currentPage);
+					setTotalPages(data.products.totalPages);
+					setTotalRecords(data.products.totalRecords);
 				}
 			} catch (error) {
 				if (!abortController.signal.aborted) {
@@ -52,7 +60,7 @@ const ProductPageServerSidePagination = () => {
 		fetchData();
 
 		return () => abortController.abort();
-	}, [sort, order]);
+	}, [sort, order, page, pageSize]);
 
 	const onSortChange = (e) => {
 		setSort(e.target.value + "");
@@ -62,12 +70,12 @@ const ProductPageServerSidePagination = () => {
 		setOrder(e.target.value + "");
 	};
 
-	const onPageChange = (e) => {
-		setPage(Number(e.target.value));
+	const onPageChange = (page) => {
+		setPage(Number(page));
 	};
 
-	const onPageLengthChange = (e) => {
-		setPageLength(Number(e.target.value));
+	const onPageSizeChange = (e) => {
+		setPageSize(Number(e));
 	};
 
 	return (
@@ -78,7 +86,23 @@ const ProductPageServerSidePagination = () => {
 				onOrderChange={onOrderChange}
 			/>
 			{error && <ErrorMessage message="Error fetching products" />}
-			{loading ? <Loader /> : <ProductList products={products} />}
+			{loading ? (
+				<Loader />
+			) : (
+				<div>
+					<ProductList products={products} />
+					<ProductShow
+						selectedValue={pageSize}
+						onValueChange={onPageSizeChange}
+						totalProducts={totalRecords}
+					/>
+					<ProductPagination
+						totalPages={totalPages}
+						currentPage={currentPage}
+						onPageChange={onPageChange}
+					/>
+				</div>
+			)}
 		</main>
 	);
 };

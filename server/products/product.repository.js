@@ -71,7 +71,19 @@ module.exports = {
 						OFFSET $2`,
 				[pageSize, offset, sortOrderParam]
 			);
-			return result.rows;
+			// Query to get the total number of records
+			const totalRecordsResult = await db.query(
+				`SELECT COUNT(*) AS total FROM product`
+			);
+
+			const totalRecords = totalRecordsResult.rows[0].total;
+
+			return {
+				data: result.rows,
+				totalRecords,
+				currentPage: page,
+				totalPages: Math.ceil(totalRecords / pageSize),
+			};
 		} catch (error) {
 			throw Error(error);
 		}
