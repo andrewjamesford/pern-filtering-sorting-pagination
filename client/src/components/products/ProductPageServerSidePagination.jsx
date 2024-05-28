@@ -6,7 +6,7 @@ import Loader from "../Loader";
 import ErrorMessage from "../ErrorMessage";
 import ProductSearch from "./ProductSearch";
 import ProductPagination from "./ProductPagination";
-import ProductShow from "./ProductShow";
+import ProductItemsPerPage from "./ProductItemsPerPage";
 
 const ProductPageServerSidePagination = () => {
 	const [loading, setLoading] = useState(false);
@@ -91,7 +91,7 @@ const ProductPageServerSidePagination = () => {
 			) : (
 				<div>
 					<ProductList products={products} />
-					<ProductShow
+					<ProductItemsPerPage
 						selectedValue={pageSize}
 						onValueChange={onPageSizeChange}
 						totalProducts={totalRecords}
