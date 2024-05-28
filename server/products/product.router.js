@@ -13,7 +13,7 @@ const queryParamsPaginationSchema = Joi.object().keys({
 	sortOrder: Joi.string().allow(null, ""),
 	direction: Joi.string().allow(null, ""),
 	page: Joi.number().integer().min(0).required(),
-	length: Joi.number().integer().min(1).required(),
+	pageSize: Joi.number().integer().min(1).required(),
 });
 
 router.get(
@@ -44,13 +44,13 @@ router.get(
 	queryParamValidationMiddleware(queryParamsPaginationSchema),
 	async (req, res, next) => {
 		try {
-			const { sortOrder = "id", direction = "asc", page = 0, length = 1000 } = req.query;
+			const { sortOrder = "id", direction = "asc", page = 0, pageSize = 5 } = req.query;
 
-			const products = await productRepository.getProducts(
+			const products = await productRepository.getProductsPaginated(
 				sortOrder,
 				direction,
 				page,
-				length,
+				pageSize,
 			);
 
 			const responseResults = {

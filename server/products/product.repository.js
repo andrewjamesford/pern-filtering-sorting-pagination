@@ -28,7 +28,48 @@ module.exports = {
           pi.name AS "imageName"
         FROM product p
         LEFT JOIN product_image pi ON p.product_image_id = pi.id
-        ORDER BY ${sortOrderParam}`,
+        ORDER BY $1`,
+				[sortOrderParam]
+			);
+			return result.rows;
+		} catch (error) {
+			throw Error(error);
+		}
+	},
+	getProductsPaginated: async (sortOrder, direction, page, pageSize) => {
+		try {
+			let sortOrderParam = "p.id";
+
+			if (sortOrder.toLowerCase() === "name") {
+				sortOrderParam = "p.name";
+			}
+			if (sortOrder.toLowerCase() === "description") {
+				sortOrderParam = "p.description";
+			}
+			if (sortOrder.toLowerCase() === "price") {
+				sortOrderParam = "p.price";
+			}
+
+			if (direction.toLowerCase() === "desc") {
+				sortOrderParam = sortOrderParam + " DESC";
+			}
+
+			// Calculate the offset (how many rows to skip)
+			const offset = (page - 1) * pageSize;
+
+			const result = await db.query(
+				`SELECT
+              p.id,
+              p.name,
+              p.description,
+              p.price,
+              pi.name AS "imageName"
+            FROM product p
+            LEFT JOIN product_image pi ON p.product_image_id = pi.id
+            ORDER BY $3
+            LIMIT $1
+						OFFSET $2`,
+				[pageSize, offset, sortOrderParam]
 			);
 			return result.rows;
 		} catch (error) {

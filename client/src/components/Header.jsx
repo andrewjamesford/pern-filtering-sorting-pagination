@@ -5,7 +5,7 @@ const Header = () => {
 		<header className="flex flex-col items-center">
 			<Link to="/" className="block">
 				<img
-					src="./img/puffer-logo.png"
+					src="./img/puffer-logo@0.5x.png"
 					alt="Puffer Logo"
 					className="aspect-ratio max-w-40 mt-4"
 				/>
