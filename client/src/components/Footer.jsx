@@ -6,7 +6,7 @@ const Footer = () => {
 			<img
 				src="/favicon.svg"
 				alt="Puffer"
-				className="w-10 h-10 ml-4 transform scale-y-[1] scale-x-[-1]"
+				className="w-10 h-10 mx-4 transform scale-y-[1] scale-x-[-1]"
 			/>
 
 			<div className="flex justify-center items-center w-full  gap-4 py-6 text-xs">
@@ -18,7 +18,7 @@ const Footer = () => {
 					Privacy policy
 				</Link>
 			</div>
-			<img src="/favicon.svg" alt="Puffer" className="w-10 h-10 mr-4" />
+			<img src="/favicon.svg" alt="Puffer" className="w-10 h-10 mx-4" />
 		</footer>
 	);
 };
