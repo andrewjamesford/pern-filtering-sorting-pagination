@@ -10,7 +10,7 @@ CREATE TABLE product (
     name text,
     description text,
     price money,
-    imageName int REFERENCES product_image(id)
+    product_image_id int REFERENCES product_image(id)
 );
 
 COMMIT;
