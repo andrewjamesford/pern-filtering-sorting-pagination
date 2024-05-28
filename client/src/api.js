@@ -1,9 +1,6 @@
 const api = {
 	getProductsClientSide: async () =>
-		await new Promise((resolve) =>
-			setTimeout(() => {
-				resolve(fetch(`./products.json`));
-			}, 2000),
+		await fetch(`./products.json`
 		),
 	getProductsServerSide: async (sort, order) =>
 		await fetch(
