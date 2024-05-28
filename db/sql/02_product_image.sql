@@ -1,12 +1,12 @@
-INSERT INTO product_image (id, name, description) VALUES
-(1,'dog_01.png'),
-(2,'dog_02.png'),
-(3,'dog_03.png'),
-(4,'dog_04.png'),
-(5,'dog_05.png'),
-(6,'dog_06.png'),
-(7,'dog_07.png'),
-(8,'dog_08.png'),
-(9,'dog_09.png'),
-(10,'dog_10.png'),
-(11,'dog_11.png');
+INSERT INTO product_image (id, name) VALUES
+(1,'image01.png'),
+(2,'image02.png'),
+(3,'image03.png'),
+(4,'image04.png'),
+(5,'image05.png'),
+(6,'image06.png'),
+(7,'image07.png'),
+(8,'image08.png'),
+(9,'image09.png'),
+(10,'image10.png'),
+(11,'image11.png');

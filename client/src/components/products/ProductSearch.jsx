@@ -1,17 +1,20 @@
 import { useState } from "react";
 const ProductSearch = ({ search = "", handleSearch }) => {
+	// Using useState hook to manage the state of productSearch
 	const [productSearch, setProductSearch] = useState(search);
 
+	// Defining a function to handle the search button click
 	const onSearchButtonClick = () => {
+		// Calling the handleSearch function passed as a prop with the current productSearch state
 		handleSearch(productSearch);
 	};
-
 	return (
 		<div className="w-full bg-black flex justify-center p-4 my">
 			<input
 				type="search"
 				value={productSearch}
 				onChange={(e) => {
+					// On change of input, update the productSearch state
 					setProductSearch(e.target.value);
 				}}
 				onBlur={(e) => {

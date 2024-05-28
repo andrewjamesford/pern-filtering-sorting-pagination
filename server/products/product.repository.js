@@ -14,9 +14,6 @@ module.exports = {
 			if (sortOrder.toLowerCase() === "price") {
 				sortOrderParam = "p.price";
 			}
-			if (sortOrder.toLowerCase() === "discountAmount") {
-				sortOrderParam = "p.discount_amount";
-			}
 
 			if (direction.toLowerCase() === "desc") {
 				sortOrderParam = sortOrderParam + " DESC";
@@ -28,12 +25,8 @@ module.exports = {
           p.name,
           p.description,
           p.price,
-          p.discount_amount AS "discountAmount",
-          pc.name AS "categoryName",
-          pi.name AS "imageName",
-          pi.description AS "imageDescription"
+          pi.name AS "imageName"
         FROM product p
-        LEFT JOIN product_category pc ON p.product_category_id = pc.id
         LEFT JOIN product_image pi ON p.product_image_id = pi.id
         ORDER BY ${sortOrderParam}`,
 			);
