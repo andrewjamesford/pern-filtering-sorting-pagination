@@ -4,11 +4,26 @@ An example of filtering, sorting and pagination in a NodeJS and ReactJS applicat
 
 ## Dependencies
 
-- NodeJS 20+
-- Docker
-- VS Code
+- [NodeJS 20+](https://nodejs.org/en)
+- [VS Code](https://code.visualstudio.com/)
+- [Docker Desktop](https://www.docker.com/products/docker-desktop)
+
+## Recommended VS Code Extensions
+
+- [Flashpost](https://marketplace.visualstudio.com/items?itemName=VASubasRaj.flashpost)
+- [SQLTools](https://marketplace.visualstudio.com/items?itemName=mtxr.sqltools)
+  - [SQLTools PostgreSQL/Cockroach Driver](https://marketplace.visualstudio.com/items?itemName=mtxr.sqltools-driver-pg)
+- [Docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)
+-
 
 ## Credits
 
 - **Please note: **
-  The images used in this project were created with Dall-E 3.
+  The product images and logos used in this project were created with Dall-E 3/Microsoft Copilot.
+
+## Getting Started
+
+- Clone the repository
+- Open the workspace in VS Code
+- Run `npm install` in the root directory
+- Open a terminal and run `docker-compose up` to start the PostgreSQL database and application

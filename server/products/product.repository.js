@@ -25,6 +25,7 @@ module.exports = {
         LEFT JOIN product_image pi ON p.product_image_id = pi.id
         ORDER BY ${sortOrderParam} ${directionParam}`
 			);
+
 			return result.rows;
 		} catch (error) {
 			throw Error(error);
@@ -32,6 +33,7 @@ module.exports = {
 	},
 	getProductsPaginated: async (sortOrder, direction, page, pageSize) => {
 		try {
+
 			let sortOrderParam = "p.name";
 			const validSortOrders = ["name", "description", "price"];
 			if (validSortOrders.includes(sortOrder.toLowerCase())) {
