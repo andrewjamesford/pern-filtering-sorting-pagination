@@ -1,7 +1,7 @@
 const Product = ({ name, description, price = 0, imageName }) => {
 	return (
 		<li>
-			<div>
+			<div className="flex flex-col">
 				{imageName ? (
 					<img
 						src={`./img/products/${imageName}`}
@@ -15,8 +15,10 @@ const Product = ({ name, description, price = 0, imageName }) => {
 						className="rounded-md"
 					/>
 				)}
-				<h3 className="text-lg h-2 uppercase font-bold">{name}</h3>
-				<div className="py-4 prose">
+				<h3 className="text-lg pt-2 uppercase font-bold overflow-hidden overflow-ellipsis whitespace-nowrap">
+					{name}
+				</h3>
+				<div className="prose pb-2">
 					<p className="">{description}</p>
 					<p className="space-y-2 proportional-nums text-sm">{price}</p>
 				</div>

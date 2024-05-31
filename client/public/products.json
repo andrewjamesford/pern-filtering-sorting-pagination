@@ -1,445 +1,452 @@
 {
 	"products": [
 		{
-			"id": "68b3edba-19a3-4a97-87d6-c718546be472",
-			"name": "Kugelfisch_2",
-			"description": "This is the description for Kugelfisch_2",
-			"price": 652.41,
-			"imageName": "image24.png"
-		},
-		{
-			"id": "9cd6fbf6-7418-419e-b12c-c5aab2e4e056",
-			"name": "Kugelfisch_3",
-			"description": "This is the description for Kugelfisch_3",
-			"price": 858.88,
-			"imageName": "image16.png"
-		},
-		{
-			"id": "c72bfb4d-03b1-42d5-8232-88510e94d127",
-			"name": "Pesce palla_1",
-			"description": "Pesce palla_1 is the name of this.",
-			"price": 137.37,
-			"imageName": "image02.png"
-		},
-		{
-			"id": "c722b7ea-8c9f-4dfd-83d0-2697e08768f8",
-			"name": "Fish_4",
-			"description": "This is the description for Product_3",
-			"price": 635.52,
-			"imageName": "image59.png"
-		},
-		{
-			"id": "0265e051-d682-4d21-b3be-9622fa45a2ec",
-			"name": "pufferikala_4",
-			"description": "This is the description for pufferikala",
-			"price": 767.35,
-			"imageName": "image03.png"
-		},
-		{
-			"id": "d32a4a9f-7ba8-4b77-9b9e-58c1b7e0eeca",
-			"name": "2012_5",
-			"description": "This is the description for Product_5",
-			"price": 157.1,
-			"imageName": "image64.png"
-		},
-		{
-			"id": "d07f3494-dbb5-44e3-9dcb-7c1e52011554",
-			"name": "Inflated_3",
-			"description": "This is the description for Product_6",
-			"price": 312.36,
+			"id": 48,
+			"name": "Black Puffer Fish 88",
+			"description": "Get the latest Black Puffer Fish 88",
+			"price": "$39.99",
 			"imageName": "image48.png"
 		},
 		{
-			"id": "f6799dff-3dc2-4c47-8820-6357fa6e6012",
-			"name": "Fish_2",
-			"description": "This is the description for Fish_2",
-			"price": 589.9,
-			"imageName": "image61.png"
-		},
-		{
-			"id": "45dfd65c-c92b-4e1a-b5ac-8bc39962c63a",
-			"name": "2012_4",
-			"description": "This is the description for Product_8",
-			"price": 524.62,
-			"imageName": "image29.png"
-		},
-		{
-			"id": "e2dc8f12-24d0-46b7-8cd4-7891d17aab9c",
-			"name": "pufferikala_1",
-			"description": "This is the description for Product_9",
-			"price": 969.12,
-			"imageName": "image22.png"
-		},
-		{
-			"id": "c6a279af-53c2-40c3-8b4a-cb530be18555",
-			"name": "Fish_3",
-			"description": "This is the description for Product_10",
-			"price": 360.33,
+			"id": 11,
+			"name": "Black Raised Block White Logo",
+			"description": "The chic Black Raised Block White Logo",
+			"price": "$59.99",
 			"imageName": "image11.png"
 		},
 		{
-			"id": "1966a5c6-2677-44a4-a054-b6582b053ad4",
-			"name": "Inflated_5",
-			"description": "This is the description for Product_11",
-			"price": 70.72,
-			"imageName": "image47.png"
-		},
-		{
-			"id": "b1cb0678-34b8-4e30-902d-0dd40b1de9b7",
-			"name": "Puffer_2",
-			"description": "Puffer_2 this is",
-			"price": 921.23,
-			"imageName": "image37.png"
-		},
-		{
-			"id": "33c9ff6e-fbe4-43bc-8e62-9f2bc4c60aab",
-			"name": "Est._4",
-			"description": "This is the description for Product_13",
-			"price": 520.26,
-			"imageName": "image01.png"
-		},
-		{
-			"id": "75e712d4-0ec2-47ef-8323-3ef7595dc5e7",
-			"name": "Fish_1",
-			"description": "This is the description for Product_14",
-			"price": 567.31,
+			"id": 42,
+			"name": "Blue Basics Puffer",
+			"description": "The elegant Blue Basics Puffer",
+			"price": "$19.99",
 			"imageName": "image42.png"
 		},
 		{
-			"id": "a5c1f219-24b4-4a07-9bb2-1c84e41b37a6",
-			"name": "Est._3",
-			"description": "This is the description for Product_15",
-			"price": 736.84,
-			"imageName": "image13.png"
-		},
-		{
-			"id": "b89c8b58-95ff-482a-a27f-2709a1060406",
-			"name": "Kugelfisch_1",
-			"description": "This is the description for Product_16",
-			"price": 287.78,
-			"imageName": "image18.png"
-		},
-		{
-			"id": "d22b80e5-e6b7-41fa-9e91-c3152597e07b",
-			"name": "Puffer_6",
-			"description": "This is the Puffer_6",
-			"price": 516.99,
-			"imageName": "image49.png"
-		},
-		{
-			"id": "cc06b40f-bb37-4972-8b9f-2cf4c61a49e3",
-			"name": "Puff_4",
-			"description": "This is the description for Product_18",
-			"price": 429.84,
-			"imageName": "image14.png"
-		},
-		{
-			"id": "f298a8ab-16f0-47da-8a53-f55ee06e82e1",
-			"name": "Fish_5",
-			"description": "This is the description for Product_19",
-			"price": 73.31,
-			"imageName": "image51.png"
-		},
-		{
-			"id": "64bbd251-5942-4ff5-9b68-cf9637d203d2",
-			"name": "Pesce palla_3",
-			"description": "This is the description for Product_20",
-			"price": 658.98,
-			"imageName": "image27.png"
-		},
-		{
-			"id": "50c2064f-7278-4e27-9963-bc39e768ed80",
-			"name": "Puffer_5",
-			"description": "This is the description for Product_21",
-			"price": 784.93,
-			"imageName": "image53.png"
-		},
-		{
-			"id": "b80a6c70-0327-472b-b837-bd623b89851f",
-			"name": "Est._2",
-			"description": "This is the description for Product_22",
-			"price": 79.3,
-			"imageName": "image44.png"
-		},
-		{
-			"id": "c2ffdb2e-7cd5-4a4c-824a-f474562c7334",
-			"name": "Spikey_4",
-			"description": "This is the description for Product_23",
-			"price": 598.94,
-			"imageName": "image54.png"
-		},
-		{
-			"id": "39d86a73-b370-4bc2-acef-c4960a30ec48",
-			"name": "Kugelfisch_5",
-			"description": "This is the description for Product_24",
-			"price": 663.88,
-			"imageName": "image04.png"
-		},
-		{
-			"id": "5b4a9a2f-c170-4207-80b1-9e50a74a4e44",
-			"name": "フグ_2",
-			"description": "This is the description for Product_25",
-			"price": 729.12,
-			"imageName": "image40.png"
-		},
-		{
-			"id": "4416f7af-2b6e-4119-92e5-f225a485a6a4",
-			"name": "Pesce palla_4",
-			"description": "This is the description for Product_26",
-			"price": 52.71,
-			"imageName": "image12.png"
-		},
-		{
-			"id": "e5d7504d-59c4-4d37-b48f-669b003bc319",
-			"name": "pez globo_2",
-			"description": "This is the description for Product_27",
-			"price": 178.99,
-			"imageName": "image57.png"
-		},
-		{
-			"id": "e37a51ad-7991-4f0a-84ab-f74a53684fc2",
-			"name": "pez globo_1",
-			"description": "This is the description for Product_28",
-			"price": 731.45,
-			"imageName": "image41.png"
-		},
-		{
-			"id": "6c7d4b11-1832-44ef-bd28-4ab2b1138964",
-			"name": "Est._6",
-			"description": "This is the description for Product_29",
-			"price": 110.48,
-			"imageName": "image39.png"
-		},
-		{
-			"id": "91d7f7f5-b471-4019-b0c3-59d61bca8b58",
-			"name": "Puffer_1",
-			"description": "This is the description for Product_30",
-			"price": 934.56,
-			"imageName": "image25.png"
-		},
-		{
-			"id": "fc304f3e-4e7b-4c4d-8b2e-dae92e64e573",
-			"name": "Puff_3",
-			"description": "This is the description for Product_31",
-			"price": 576.74,
-			"imageName": "image60.png"
-		},
-		{
-			"id": "5c63263c-6b50-4031-a3a3-4f8715364d3f",
-			"name": "Spikey_2",
-			"description": "This is the description for Product_32",
-			"price": 270.09,
-			"imageName": "image35.png"
-		},
-		{
-			"id": "19b38b19-ea4d-4b4f-8e1e-58a0a1a7d593",
-			"name": "Kugelfisch_4",
-			"description": "This is the description for Product_33",
-			"price": 180.52,
-			"imageName": "image62.png"
-		},
-		{
-			"id": "62b18788-19b3-4c05-aeef-6abf2224b2b4",
-			"name": "pez globo_4",
-			"description": "This is the description for Product_34",
-			"price": 224.56,
-			"imageName": "image43.png"
-		},
-		{
-			"id": "eec9cabc-214a-414a-9e86-2327d5479c2d",
-			"name": "pez globo_5",
-			"description": "This is the description for Product_35",
-			"price": 324.49,
-			"imageName": "image06.png"
-		},
-		{
-			"id": "b7e84f37-1c4a-4726-aade-cb3a1b1ba105",
-			"name": "フグ_1",
-			"description": "This is the description for Product_36",
-			"price": 305.85,
-			"imageName": "image05.png"
-		},
-		{
-			"id": "189d92f8-e79b-45db-bbe7-554abb5a75bb",
-			"name": "Puff_1",
-			"description": "This is the description for Product_37",
-			"price": 100.83,
-			"imageName": "image15.png"
-		},
-		{
-			"id": "4df07f80-f8b2-4dc4-8058-eccf1996b8c7",
-			"name": "Spikey_1",
-			"description": "This is the description for Product_38",
-			"price": 391.32,
-			"imageName": "image55.png"
-		},
-		{
-			"id": "0d0203f5-9ed3-4f9f-9b77-9dbf3e9e94d4",
-			"name": "Inflated_4",
-			"description": "This is the description for Product_39",
-			"price": 994.94,
-			"imageName": "image30.png"
-		},
-		{
-			"id": "3de51c68-4cc0-45b3-a1e3-5f3faeed5502",
-			"name": "フグ_4",
-			"description": "This is the description for Product_40",
-			"price": 297.01,
-			"imageName": "image45.png"
-		},
-		{
-			"id": "92d54c77-91c5-4e0c-bd56-2b456a8efc62",
-			"name": "Puffer_3",
-			"description": "This is the description for Product_41",
-			"price": 145.52,
-			"imageName": "image33.png"
-		},
-		{
-			"id": "d3474025-17d7-4c57-b01e-0d38b710a2b7",
-			"name": "フグ_5",
-			"description": "This is the description for Product_42",
-			"price": 15.38,
-			"imageName": "image38.png"
-		},
-		{
-			"id": "f28e4a1d-e238-4ed5-a6d3-6b53f7e8431f",
-			"name": "Puff_2",
-			"description": "This is the description for Product_43",
-			"price": 669.68,
-			"imageName": "image21.png"
-		},
-		{
-			"id": "949a2d1c-00a2-48cf-90f3-57ed730f5260",
-			"name": "pufferikala_2",
-			"description": "This is the description for Product_44",
-			"price": 219.9,
-			"imageName": "image20.png"
-		},
-		{
-			"id": "ca0b9ff4-5f91-4b17-8455-fbfdf25108a8",
-			"name": "Pesce palla_5",
-			"description": "This is the description for Product_45",
-			"price": 387.54,
-			"imageName": "image52.png"
-		},
-		{
-			"id": "8d59e4ba-09f5-4a90-a1f8-5aa9f7b92ac7",
-			"name": "Puffer_4",
-			"description": "This is the description for Product_46",
-			"price": 566.71,
-			"imageName": "image07.png"
-		},
-		{
-			"id": "cf0d34d5-344a-48c4-8134-6bc4a46d4d28",
-			"name": "pufferikala_5",
-			"description": "This is the description for Product_47",
-			"price": 95.95,
-			"imageName": "image46.png"
-		},
-		{
-			"id": "4c52422b-4b97-4320-b681-4d2635f34b84",
-			"name": "pufferikala_3",
-			"description": "This is the description for Product_48",
-			"price": 951.93,
-			"imageName": "image58.png"
-		},
-		{
-			"id": "8f4737bb-8c71-40da-96ec-5d13eab9d423",
-			"name": "Puff_6",
-			"description": "This is the description for Product_49",
-			"price": 739.77,
-			"imageName": "image26.png"
-		},
-		{
-			"id": "aaa70b62-9c28-4ed7-8c53-7db4c169bdc2",
-			"name": "Spikey_3",
-			"description": "This is the description for Product_50",
-			"price": 566.71,
-			"imageName": "image17.png"
-		},
-		{
-			"id": "827ad201-ee19-4f03-942b-34e7faff29d1",
-			"name": "Inflated_2",
-			"description": "This is the description for Product_51",
-			"price": 95.95,
+			"id": 8,
+			"name": "Blue Kawaii Puffer Fish",
+			"description": "The elegant Blue Kawaii Puffer Fish",
+			"price": "$29.99",
 			"imageName": "image08.png"
 		},
 		{
-			"id": "beb3a8a1-e444-460f-a582-c94fa20fcce1",
-			"name": "2012_3",
-			"description": "This is the description for Product_52",
-			"price": 951.93,
-			"imageName": "image56.png"
+			"id": 12,
+			"name": "Blue Varsity Puffer",
+			"description": "The elegant Blue Varsity Puffer",
+			"price": "$59.99",
+			"imageName": "image12.png"
 		},
 		{
-			"id": "059f54a1-607b-47b6-ae91-fd2e00c041fd",
-			"name": "2012_1",
-			"description": "This is the description for Product_49",
-			"price": 739.77,
+			"id": 51,
+			"name": "Brown Puffer Underlined",
+			"description": "Experience the comfort of our Brown Puffer Underlined",
+			"price": "$59.99",
+			"imageName": "image51.png"
+		},
+		{
+			"id": 2,
+			"name": "Dark Blue White Block Logo",
+			"description": "The fashionable Dark Blue White Block Logo",
+			"price": "$49.99",
+			"imageName": "image02.png"
+		},
+		{
+			"id": 39,
+			"name": "Established Then Off White Puffer",
+			"description": "The bold Established Then Off White Puffer",
+			"price": "$59.99",
+			"imageName": "image39.png"
+		},
+		{
+			"id": 53,
+			"name": "Forest Green Puffer Lower Shadow",
+			"description": "Experience the comfort of our Forest Green Puffer Lower Shadow",
+			"price": "$39.99",
+			"imageName": "image53.png"
+		},
+		{
+			"id": 33,
+			"name": "Green Bubbles the Puffer Fish",
+			"description": "The bold Green Bubbles the Puffer Fish",
+			"price": "$29.99",
+			"imageName": "image33.png"
+		},
+		{
+			"id": 38,
+			"name": "Green Cutie Puffer Fish",
+			"description": "The classic Green Cutie Puffer Fish",
+			"price": "$39.99",
+			"imageName": "image38.png"
+		},
+		{
+			"id": 41,
+			"name": "Green Eagle Puffer",
+			"description": "Get the latest Green Eagle Puffer",
+			"price": "$69.99",
+			"imageName": "image41.png"
+		},
+		{
+			"id": 28,
+			"name": "Green Under the Sea Puffer Fish",
+			"description": "The unique Green Under the Sea Puffer Fish",
+			"price": "$39.99",
 			"imageName": "image28.png"
 		},
 		{
-			"id": "d63cb6ac-23eb-44d9-95f2-714a10907df8",
-			"name": "2012_6",
-			"description": "This is the description for Product_55",
-			"price": 926.4455544767565,
-			"imageName": "image36.png"
-		},
-		{
-			"id": "79fde465-0b65-4e4d-b7cb-b8c32ec25a15",
-			"name": "Est._5",
-			"description": "This is the description for Product_56",
-			"price": 14.855361464410244,
-			"imageName": "image50.png"
-		},
-		{
-			"id": "0e216a70-821b-4bf3-a740-9e5846b12558",
-			"name": "2012_2",
-			"description": "This is the description for Product_57",
-			"price": 531.1846092514039,
-			"imageName": "image31.png"
-		},
-		{
-			"id": "9196c819-2976-4029-81f8-8d08f852e66a",
-			"name": "Pesce palla_2",
-			"description": "This is the description for Product_58",
-			"price": 388.6695996457794,
+			"id": 10,
+			"name": "Green Underwater Puffer",
+			"description": "Experience the comfort of our Green Underwater Puffer",
+			"price": "$29.99",
 			"imageName": "image10.png"
 		},
 		{
-			"id": "6e95e8f6-c522-4126-8b65-f5cd9adeb680",
-			"name": "pez globo_3",
-			"description": "This is the description for Product_59",
-			"price": 988.5944931435102,
+			"id": 1,
+			"name": "Grey Puffer Fish",
+			"description": "The elegant Grey Puffer Fish",
+			"price": "$49.99",
+			"imageName": "image01.png"
+		},
+		{
+			"id": 55,
+			"name": "Grey Puffer Fish",
+			"description": "The cool Grey Puffer Fish",
+			"price": "$29.99",
+			"imageName": "image55.png"
+		},
+		{
+			"id": 31,
+			"name": "Grey Puffer in Pink College Fish",
+			"description": "The classic Grey Puffer in Pink College Fish",
+			"price": "$29.99",
+			"imageName": "image31.png"
+		},
+		{
+			"id": 22,
+			"name": "Grey Varsity Puffer",
+			"description": "The iconic Grey Varsity Puffer",
+			"price": "$49.99",
+			"imageName": "image22.png"
+		},
+		{
+			"id": 34,
+			"name": "Grey Varsity Puffer on White",
+			"description": "Check out the stylish Grey Varsity Puffer on White",
+			"price": "$39.99",
 			"imageName": "image34.png"
 		},
 		{
-			"id": "0606545e-01b3-408f-ad7b-9411f1ea1cbc",
-			"name": "Inflated_1",
-			"description": "This is the description for Product_60",
-			"price": 985.0896204889455,
-			"imageName": "image32.png"
+			"id": 7,
+			"name": "Khaki Two Tone Logo",
+			"description": "This is a fantastic Khaki Two Tone Logo",
+			"price": "$29.99",
+			"imageName": "image07.png"
 		},
 		{
-			"id": "08cd9330-999e-47d6-a9ac-d104276bceed",
-			"name": "Spikey_5",
-			"description": "This is the description for Product_61",
-			"price": 884.7987998611458,
+			"id": 52,
+			"name": "Light Blue Puffer Block",
+			"description": "The unique Light Blue Puffer Block",
+			"price": "$69.99",
+			"imageName": "image52.png"
+		},
+		{
+			"id": 3,
+			"name": "Light Grey Puffer Bubbles Fish",
+			"description": "This is a fantastic Light Grey Puffer Bubbles Fish",
+			"price": "$49.99",
+			"imageName": "image03.png"
+		},
+		{
+			"id": 9,
+			"name": "Light Grey Ye Herald Logo",
+			"description": "This is a fantastic Light Grey Ye Herald Logo",
+			"price": "$29.99",
+			"imageName": "image09.png"
+		},
+		{
+			"id": 23,
+			"name": "Lime 3D Block Puffer",
+			"description": "Get the latest Lime 3D Block Puffer",
+			"price": "$19.99",
 			"imageName": "image23.png"
 		},
 		{
-			"id": "1f2ae72e-9718-47ba-a3ae-e6a300d8bf09",
-			"name": "Puff_5",
-			"description": "This is the description for Product_62",
-			"price": 992.960501837719,
+			"id": 5,
+			"name": "Lime Green with Cloud Logo",
+			"description": "The elegant Lime Green with Cloud Logo",
+			"price": "$29.99",
+			"imageName": "image05.png"
+		},
+		{
+			"id": 20,
+			"name": "Lime Master of Puffer",
+			"description": "The modern Lime Master of Puffer",
+			"price": "$59.99",
+			"imageName": "image20.png"
+		},
+		{
+			"id": 57,
+			"name": "Magenta Friendly Puffer Cloud",
+			"description": "The bold Magenta Friendly Puffer Cloud",
+			"price": "$49.99",
+			"imageName": "image57.png"
+		},
+		{
+			"id": 54,
+			"name": "Magenta with Grey Cloud Puffer",
+			"description": "Get the latest Magenta with Grey Cloud Puffer",
+			"price": "$19.99",
+			"imageName": "image54.png"
+		},
+		{
+			"id": 32,
+			"name": "Midnight Stretched Long Puffer",
+			"description": "Experience the comfort of our Midnight Stretched Long Puffer",
+			"price": "$39.99",
+			"imageName": "image32.png"
+		},
+		{
+			"id": 19,
+			"name": "Navy Capital P for Puffer",
+			"description": "The chic Navy Capital P for Puffer",
+			"price": "$59.99",
+			"imageName": "image19.png"
+		},
+		{
+			"id": 59,
+			"name": "Off White Pink Bands Varsity",
+			"description": "The cool Off White Pink Bands Varsity",
+			"price": "$69.99",
+			"imageName": "image59.png"
+		},
+		{
+			"id": 45,
+			"name": "Orange 3D Puffed Puffer",
+			"description": "The timeless Orange 3D Puffed Puffer",
+			"price": "$39.99",
+			"imageName": "image45.png"
+		},
+		{
+			"id": 44,
+			"name": "Orange Puffer Wrapped in a Cloud",
+			"description": "The cool Orange Puffer Wrapped in a Cloud",
+			"price": "$29.99",
+			"imageName": "image44.png"
+		},
+		{
+			"id": 46,
+			"name": "Orange Serif Puffer Logo",
+			"description": "Introducing the new Orange Serif Puffer Logo",
+			"price": "$469.99",
+			"imageName": "image46.png"
+		},
+		{
+			"id": 36,
+			"name": "Orange Tetons Range Puffer",
+			"description": "Check out the stylish Orange Tetons Range Puffer",
+			"price": "$49.99",
+			"imageName": "image36.png"
+		},
+		{
+			"id": 63,
+			"name": "Pink Mean Fluffy Puffer",
+			"description": "The fashionable Pink Mean Fluffy Puffer",
+			"price": "$49.99",
 			"imageName": "image63.png"
 		},
 		{
-			"id": "559b50ca-cf64-42e2-921b-e2827811f967",
-			"name": "フグ_3",
-			"description": "This is the description for Product_64",
-			"price": 859.0856875668122,
-			"imageName": "image19.png"
+			"id": 47,
+			"name": "Pink Prison Break Puffer",
+			"description": "The cool Pink Prison Break Puffer",
+			"price": "$19.99",
+			"imageName": "image47.png"
+		},
+		{
+			"id": 64,
+			"name": "Pink Puffer SWAT",
+			"description": "The unique Pink Puffer SWAT",
+			"price": "$59.99",
+			"imageName": "image64.png"
+		},
+		{
+			"id": 61,
+			"name": "Pink Puffer Skull",
+			"description": "The fashionable Pink Puffer Skull",
+			"price": "$29.99",
+			"imageName": "image61.png"
+		},
+		{
+			"id": 62,
+			"name": "Pink Puffer Wolf",
+			"description": "The unique Pink Puffer Wolf",
+			"price": "$39.99",
+			"imageName": "image62.png"
+		},
+		{
+			"id": 13,
+			"name": "Pink Varsity Puffer",
+			"description": "The sophisticated Pink Varsity Puffer",
+			"price": "$59.99",
+			"imageName": "image13.png"
+		},
+		{
+			"id": 17,
+			"name": "Prison Stripes Puffer",
+			"description": "Get the latest Prison Stripes Puffer",
+			"price": "$59.99",
+			"imageName": "image17.png"
+		},
+		{
+			"id": 18,
+			"name": "Puffer Fish on White",
+			"description": "Experience the comfort of our Puffer Fish on White",
+			"price": "$59.99",
+			"imageName": "image18.png"
+		},
+		{
+			"id": 60,
+			"name": "Purple Puffer Classic",
+			"description": "The modern Purple Puffer Classic",
+			"price": "$19.99",
+			"imageName": "image60.png"
+		},
+		{
+			"id": 14,
+			"name": "Red Cloud Puffer",
+			"description": "The iconic Red Cloud Puffer",
+			"price": "$59.99",
+			"imageName": "image14.png"
+		},
+		{
+			"id": 27,
+			"name": "Red Cloud on Top Logo",
+			"description": "This is a fantastic Red Cloud on Top Logo",
+			"price": "$29.99",
+			"imageName": "image27.png"
+		},
+		{
+			"id": 37,
+			"name": "Red Half Puffer",
+			"description": "Our exclusive Red Half Puffer",
+			"price": "$39.99",
+			"imageName": "image37.png"
+		},
+		{
+			"id": 24,
+			"name": "Red Hiding in the Clouds Puffer",
+			"description": "The bold Red Hiding in the Clouds Puffer",
+			"price": "$39.99",
+			"imageName": "image24.png"
+		},
+		{
+			"id": 16,
+			"name": "Red Logotype Puffer",
+			"description": "Introducing the new Red Logotype Puffer",
+			"price": "$59.99",
+			"imageName": "image16.png"
+		},
+		{
+			"id": 30,
+			"name": "Red Puffer Double Border",
+			"description": "One of our top sellers, the Red Puffer Double Border",
+			"price": "$39.99",
+			"imageName": "image30.png"
+		},
+		{
+			"id": 6,
+			"name": "Red Puffer Mountain Vista",
+			"description": "The cool Red Puffer Mountain Vista",
+			"price": "$29.99",
+			"imageName": "image06.png"
+		},
+		{
+			"id": 21,
+			"name": "Red Script Puffer",
+			"description": "The iconic Red Script Puffer",
+			"price": "$39.99",
+			"imageName": "image21.png"
+		},
+		{
+			"id": 43,
+			"name": "Salmon Varsity Puffer",
+			"description": "The fashionable Salmon Varsity Puffer",
+			"price": "$39.99",
+			"imageName": "image43.png"
+		},
+		{
+			"id": 56,
+			"name": "Simply Puffer in White",
+			"description": "The unique Simply Puffer in White",
+			"price": "$39.99",
+			"imageName": "image56.png"
+		},
+		{
+			"id": 40,
+			"name": "Submerged Puffer in Black",
+			"description": "The fashionable Submerged Puffer in Black",
+			"price": "$39.99",
+			"imageName": "image40.png"
+		},
+		{
+			"id": 58,
+			"name": "Submerged Puffer in Forest Green",
+			"description": "Introducing the new Submerged Puffer in Forest Green",
+			"price": "$59.99",
+			"imageName": "image58.png"
+		},
+		{
+			"id": 35,
+			"name": "Teal Green White Fluffy Puffer",
+			"description": "Introducing the new Teal Green White Fluffy Puffer",
+			"price": "$19.99",
+			"imageName": "image35.png"
+		},
+		{
+			"id": 50,
+			"name": "Teal Puffer Big Shadow",
+			"description": "The fashionable Teal Puffer Big Shadow",
+			"price": "$39.99",
+			"imageName": "image50.png"
+		},
+		{
+			"id": 49,
+			"name": "Turquoise Puffer Outlined",
+			"description": "Introducing the new Turquoise Puffer Outlined",
+			"price": "$29.99",
+			"imageName": "image49.png"
+		},
+		{
+			"id": 25,
+			"name": "White Mono Puffer Fish",
+			"description": "The elegant White Mono Puffer Fish",
+			"price": "$39.99",
+			"imageName": "image25.png"
+		},
+		{
+			"id": 26,
+			"name": "White Serif Puffer",
+			"description": "The innovative White Serif Puffer",
+			"price": "$39.99",
+			"imageName": "image26.png"
+		},
+		{
+			"id": 29,
+			"name": "White with Pink Bands Varsity Puffer",
+			"description": "This is a fantastic White with Pink Bands Varsity Puffer",
+			"price": "$39.99",
+			"imageName": "image29.png"
+		},
+		{
+			"id": 4,
+			"name": "White with Varsity Logo",
+			"description": "The innovative White with Varsity Logo",
+			"price": "$29.99",
+			"imageName": "image04.png"
+		},
+		{
+			"id": 15,
+			"name": "Yellow Cloud Puffer",
+			"description": "Introducing the new Yellow Cloud Puffer",
+			"price": "$29.99",
+			"imageName": "image15.png"
 		}
 	]
 }
