@@ -15,7 +15,7 @@ const ProductPageServerSidePagination = () => {
 	const [sort, setSort] = useState("name");
 	const [order, setOrder] = useState("asc");
 	const [page, setPage] = useState(1);
-	const [pageSize, setPageSize] = useState(5);
+	const [pageSize, setPageSize] = useState(6);
 	const [currentPage, setCurrentPage] = useState(1);
 	const [totalPages, setTotalPages] = useState(1);
 	const [totalRecords, setTotalRecords] = useState(0);

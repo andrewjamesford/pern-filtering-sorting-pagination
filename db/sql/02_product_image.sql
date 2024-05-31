@@ -52,7 +52,7 @@ INSERT INTO product_image (id, name) VALUES
 (51,'image51.png'),
 (52,'image52.png'),
 (53,'image53.png'),
-(54,'image54.png');
+(54,'image54.png'),
 (55,'image55.png'),
 (56,'image56.png'),
 (57,'image57.png'),

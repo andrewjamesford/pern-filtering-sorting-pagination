@@ -16,8 +16,8 @@ const ProductItemsPerPage = ({
 					onChange={(e) => onValueChange(e.target.value)}
 					className="border-none justify-self-end"
 				>
-					<option value="5">5</option>
-					<option value="10">10</option>
+					<option value="6">6</option>
+					<option value="12">12</option>
 				</select>
 			</div>
 			<p className="text-sm">{totalProducts} Products Total</p>
