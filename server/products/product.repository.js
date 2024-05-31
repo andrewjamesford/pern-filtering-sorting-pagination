@@ -1,18 +1,8 @@
 const db = require("../db");
 
 module.exports = {
-	getProducts: async (sortOrder, direction) => {
+	getProducts: async () => {
 		try {
-			let sortOrderParam = "p.name";
-			const validSortOrders = ["name", "description", "price"];
-			if (validSortOrders.includes(sortOrder.toLowerCase())) {
-				sortOrderParam = `p.${sortOrder.toLowerCase()}`;
-			}
-
-			let directionParam = "ASC";
-			if (direction.toLowerCase() === "desc") {
-				directionParam = "DESC";
-			}
 
 			const result = await db.query(
 				`SELECT
@@ -23,7 +13,7 @@ module.exports = {
           pi.name AS "imageName"
         FROM product p
         LEFT JOIN product_image pi ON p.product_image_id = pi.id
-        ORDER BY ${sortOrderParam} ${directionParam}`
+				ORDER BY p.name`
 			);
 
 			return result.rows;

@@ -26,7 +26,7 @@ const ProductPageServerSide = () => {
 			try {
 				setLoading(true);
 				setError(false);
-				const result = await api.getProductsServerSide(sort, order);
+				const result = await api.getProductsServerSide();
 				if (!result.ok) {
 					throw new Error("API Error");
 				}
@@ -93,7 +93,7 @@ const ProductPageServerSide = () => {
 			return;
 		}
 
-		const filteredProducts = products.filter((product) => {
+		const filteredProducts = origData.filter((product) => {
 			return (
 				product.name.toLowerCase().includes(searchValue) ||
 				product.description.toLowerCase().includes(searchValue)

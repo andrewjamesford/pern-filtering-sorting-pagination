@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
 	return (
-		<footer className="w-full flex justify-center items-center border-t-2 border-black">
+		<footer className="w-full flex justify-center items-center border-t-2 border-black mt-4">
 			<img
 				src="/favicon.svg"
 				alt="Puffer"

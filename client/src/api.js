@@ -2,9 +2,9 @@ const api = {
 	getProductsClientSide: async () =>
 		await fetch(`./products.json`
 		),
-	getProductsServerSide: async (sort, order) =>
+	getProductsServerSide: async () =>
 		await fetch(
-			`${import.meta.env.VITE_API_URL}/products?sortOrder=${sort}&direction=${order}`,
+			`${import.meta.env.VITE_API_URL}/products`,
 		),
 	getProductsServerSidePagination: async (sort, order, page, pageSize, searchString) =>
 		await fetch(

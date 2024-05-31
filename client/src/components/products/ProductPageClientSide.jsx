@@ -6,6 +6,7 @@ import ProductSortOrder from "./ProductSortOrder";
 import Loader from "../Loader";
 import ErrorMessage from "../ErrorMessage";
 import ProductSearch from "./ProductSearch";
+import ProductPriceRange from "./ProductPriceRange";
 
 const ProductPageClientSide = () => {
 	const [loading, setLoading] = useState(false);
@@ -15,6 +16,7 @@ const ProductPageClientSide = () => {
 	const [order, setOrder] = useState("asc");
 	const [search, setSearch] = useState("");
 	const [origData, setOrigData] = useState([]);
+	const [priceRange, setPriceRange] = useState(100);
 
 	useEffect(() => {
 		// We use AbortController (https://developer.mozilla.org/en-US/docs/Web/API/AbortController)
@@ -51,6 +53,15 @@ const ProductPageClientSide = () => {
 
 		return () => abortController.abort();
 	}, []);
+
+	const filterPriceRange = (price) => {
+		const filteredProducts = origData.filter((product) => {
+			const productPrice = product.price.replace("$", "");
+			return parseFloat(productPrice) <= parseFloat(price);
+		});
+		setPriceRange(parseFloat(price));
+		setProducts(filteredProducts);
+	};
 
 	const sortOrder = (dataVal, sortVal, orderVal) => {
 		if (!dataVal || !dataVal.length) {
@@ -105,7 +116,8 @@ const ProductPageClientSide = () => {
 
 	return (
 		<main className="flex flex-col">
-			<ProductSearch handleSearch={onSearchChange} search={search} />
+			{/* <ProductSearch handleSearch={onSearchChange} search={search} /> */}
+			<ProductPriceRange onRangeChange={filterPriceRange} price={priceRange} />
 			<ProductSortOrder
 				onSortChange={onSortChange}
 				onOrderChange={onOrderChange}
