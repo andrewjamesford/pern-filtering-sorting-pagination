@@ -5,7 +5,6 @@ import ProductList from "./ProductList";
 import ProductSortOrder from "./ProductSortOrder";
 import Loader from "../Loader";
 import ErrorMessage from "../ErrorMessage";
-import ProductSearch from "./ProductSearch";
 import ProductPriceRange from "./ProductPriceRange";
 
 const ProductPageClientSide = () => {
@@ -14,7 +13,6 @@ const ProductPageClientSide = () => {
 	const [products, setProducts] = useState([]);
 	const [sort, setSort] = useState("name");
 	const [order, setOrder] = useState("asc");
-	const [search, setSearch] = useState("");
 	const [origData, setOrigData] = useState([]);
 	const [priceRange, setPriceRange] = useState(100);
 
@@ -35,7 +33,12 @@ const ProductPageClientSide = () => {
 				const data = await result.json();
 				setOrigData(data.products);
 				if (!abortController.signal.aborted) {
-					const sortedProducts = sortOrder(data.products, sort, order);
+					const sortedProducts = sortOrder(
+						data.products,
+						sort,
+						order,
+						priceRange,
+					);
 					setProducts(sortedProducts);
 				}
 			} catch (error) {
@@ -54,21 +57,30 @@ const ProductPageClientSide = () => {
 		return () => abortController.abort();
 	}, []);
 
-	const filterPriceRange = (price) => {
-		const filteredProducts = origData.filter((product) => {
-			const productPrice = product.price.replace("$", "");
-			return parseFloat(productPrice) <= parseFloat(price);
-		});
+	const filterPriceRange = (data, price) => {
+		let filteredProducts = origData;
+		if (data && data.length > 0) {
+			filteredProducts = data.filter((product) => {
+				const productPrice = product.price.replace("$", "");
+				return parseFloat(productPrice) <= parseFloat(price);
+			});
+		}
 		setPriceRange(parseFloat(price));
 		setProducts(filteredProducts);
+		return filteredProducts;
 	};
 
-	const sortOrder = (dataVal, sortVal, orderVal) => {
-		if (!dataVal || !dataVal.length) {
+	const onFilterChange = (price) => {
+		sortOrder(origData, sort, order, price);
+	};
+
+	const sortOrder = (dataVal, sortVal, orderVal, priceRange) => {
+		if (!dataVal || dataVal.length < 1) {
 			return dataVal;
 		}
+		const dataFiltered = filterPriceRange(dataVal, priceRange);
 		// Client-side sorting
-		const sortProductsBy = dataVal.sort((a, b) => {
+		const sortProductsBy = dataFiltered.sort((a, b) => {
 			if (typeof a[sortVal] === "number" && typeof b[sortVal] === "number") {
 				return a[sortVal] - b[sortVal];
 			} else {
@@ -86,38 +98,18 @@ const ProductPageClientSide = () => {
 	const onSortChange = (e) => {
 		const sortVal = e.target.value + "";
 		setSort(sortVal);
-		setProducts(sortOrder(products, sortVal, order));
+		setProducts(sortOrder(products, sortVal, order, priceRange));
 	};
 
 	const onOrderChange = (e) => {
 		const orderVal = e.target.value + "";
 		setOrder(orderVal);
-		setProducts(sortOrder(products, sort, orderVal));
-	};
-
-	const onSearchChange = (searchInput) => {
-		const searchValue = searchInput.toLowerCase();
-
-		if (searchValue === "") {
-			setSearch("");
-			setProducts(origData);
-			return;
-		}
-
-		const filteredProducts = products.filter((product) => {
-			return (
-				product.name.toLowerCase().includes(searchValue) ||
-				product.description.toLowerCase().includes(searchValue)
-			);
-		});
-		const sortedProducts = sortOrder(filteredProducts, sort, order);
-		setProducts(sortedProducts);
+		setProducts(sortOrder(products, sort, orderVal, priceRange));
 	};
 
 	return (
 		<main className="flex flex-col">
-			{/* <ProductSearch handleSearch={onSearchChange} search={search} /> */}
-			<ProductPriceRange onRangeChange={filterPriceRange} price={priceRange} />
+			<ProductPriceRange onRangeChange={onFilterChange} price={priceRange} />
 			<ProductSortOrder
 				onSortChange={onSortChange}
 				onOrderChange={onOrderChange}
