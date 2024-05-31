@@ -5,15 +5,16 @@ const queryParamValidationMiddleware = require("../middleware/queryParamValidati
 const productRepository = require("./product.repository");
 
 const queryParamsSchema = Joi.object().keys({
-	sortOrder: Joi.string().allow(null, ""),
-	direction: Joi.string().allow(null, ""),
+	sortOrder: Joi.string().pattern(/^[a-z0-9 ]+$/i).allow(null, ""),
+	direction: Joi.string().pattern(/^[a-z0-9 ]+$/i).allow(null, ""),
 });
 
 const queryParamsPaginationSchema = Joi.object().keys({
-	sortOrder: Joi.string().allow(null, ""),
-	direction: Joi.string().allow(null, ""),
+	sortOrder: Joi.string().pattern(/^[a-z0-9 ]+$/i).allow(null, ""),
+	direction: Joi.string().pattern(/^[a-z0-9 ]+$/i).allow(null, ""),
 	page: Joi.number().integer().min(0).required(),
 	pageSize: Joi.number().integer().min(1).required(),
+	searchString: Joi.string().pattern(/^[a-z0-9 ]+$/i).allow(null, ""),
 });
 
 router.get(
@@ -44,13 +45,14 @@ router.get(
 	queryParamValidationMiddleware(queryParamsPaginationSchema),
 	async (req, res, next) => {
 		try {
-			const { sortOrder = "id", direction = "asc", page = 0, pageSize = 5 } = req.query;
+			const { sortOrder = "id", direction = "asc", page = 0, pageSize = 5, searchString = "" } = req.query;
 
 			const products = await productRepository.getProductsPaginated(
 				sortOrder,
 				direction,
 				page,
 				pageSize,
+				searchString
 			);
 
 			const responseResults = {

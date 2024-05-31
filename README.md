@@ -23,7 +23,7 @@ An example of filtering, sorting and pagination in a NodeJS and ReactJS applicat
 
 ## Getting Started
 
-- Clone the repository
+- Clone the [repository](https://github.com/andrewjamesford/pern-filtering-sorting-pagination)
 - Open the workspace in VS Code
 - Run `npm install` in the root directory
 - Open a terminal and run `docker-compose up` to start the PostgreSQL database and application

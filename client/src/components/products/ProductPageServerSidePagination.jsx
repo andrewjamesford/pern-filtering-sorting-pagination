@@ -19,6 +19,7 @@ const ProductPageServerSidePagination = () => {
 	const [currentPage, setCurrentPage] = useState(1);
 	const [totalPages, setTotalPages] = useState(1);
 	const [totalRecords, setTotalRecords] = useState(0);
+	const [search, setSearch] = useState("");
 
 	useEffect(() => {
 		// We use AbortController (https://developer.mozilla.org/en-US/docs/Web/API/AbortController)
@@ -35,6 +36,7 @@ const ProductPageServerSidePagination = () => {
 					order,
 					page,
 					pageSize,
+					search,
 				);
 				if (!result.ok) {
 					throw new Error("API Error");
@@ -60,7 +62,7 @@ const ProductPageServerSidePagination = () => {
 		fetchData();
 
 		return () => abortController.abort();
-	}, [sort, order, page, pageSize]);
+	}, [sort, order, page, pageSize, search]);
 
 	const onSortChange = (e) => {
 		setSort(e.target.value + "");
@@ -78,9 +80,13 @@ const ProductPageServerSidePagination = () => {
 		setPageSize(Number(e));
 	};
 
+	const onSearchChange = (searchInput) => {
+		setSearch(searchInput);
+	};
+
 	return (
 		<main className="flex flex-col">
-			<ProductSearch />
+			<ProductSearch handleSearch={onSearchChange} />
 			<ProductSortOrder
 				onSortChange={onSortChange}
 				onOrderChange={onOrderChange}

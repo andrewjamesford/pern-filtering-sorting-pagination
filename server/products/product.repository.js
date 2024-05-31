@@ -31,7 +31,7 @@ module.exports = {
 			throw Error(error);
 		}
 	},
-	getProductsPaginated: async (sortOrder, direction, page, pageSize) => {
+	getProductsPaginated: async (sortOrder, direction, page, pageSize, searchString) => {
 		try {
 
 			let sortOrderParam = "p.name";
@@ -43,6 +43,11 @@ module.exports = {
 			let directionParam = "ASC";
 			if (direction.toLowerCase() === "desc") {
 				directionParam = "DESC";
+			}
+
+			let searchQuery = "";
+			if (searchString && searchString.length > 0) {
+				searchQuery = `${searchString.toLowerCase()}`;
 			}
 
 			// Calculate the offset (how many rows to skip)
@@ -57,6 +62,7 @@ module.exports = {
               pi.name AS "imageName"
             FROM product p
             LEFT JOIN product_image pi ON p.product_image_id = pi.id
+						WHERE p.name ILIKE '%${searchQuery}%' OR p.description ILIKE '%${searchQuery}%'
             ORDER BY ${sortOrderParam} ${directionParam}
             LIMIT $1
 						OFFSET $2`,
