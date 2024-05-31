@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const ProductPriceRange = ({ onRangeChange, price }) => {
+const ProductPriceFilter = ({ onRangeChange, price }) => {
 	const [selectedValue, setSelectedValue] = useState(price);
 
 	return (
@@ -45,4 +45,4 @@ const ProductPriceRange = ({ onRangeChange, price }) => {
 	);
 };
 
-export default ProductPriceRange;
+export default ProductPriceFilter;

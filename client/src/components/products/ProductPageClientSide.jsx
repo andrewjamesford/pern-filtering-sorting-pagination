@@ -5,7 +5,7 @@ import ProductList from "./ProductList";
 import ProductSortOrder from "./ProductSortOrder";
 import Loader from "../Loader";
 import ErrorMessage from "../ErrorMessage";
-import ProductPriceRange from "./ProductPriceRange";
+import ProductPriceFilter from "./ProductPriceFilter";
 
 const ProductPageClientSide = () => {
 	const [loading, setLoading] = useState(false);
@@ -109,7 +109,7 @@ const ProductPageClientSide = () => {
 
 	return (
 		<main className="flex flex-col">
-			<ProductPriceRange onRangeChange={onFilterChange} price={priceRange} />
+			<ProductPriceFilter onRangeChange={onFilterChange} price={priceRange} />
 			<ProductSortOrder
 				onSortChange={onSortChange}
 				onOrderChange={onOrderChange}
