@@ -81,6 +81,7 @@ const ProductPageServerSidePagination = () => {
 	};
 
 	const onFilterChange = (price) => {
+		setPage(Number(1));
 		setPriceRange(price);
 	};
 
