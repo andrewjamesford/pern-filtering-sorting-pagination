@@ -31,7 +31,6 @@ const ProductPageClientSide = () => {
 					throw new Error("API Error");
 				}
 				const data = await result.json();
-				setOrigData(data.products);
 				if (!abortController.signal.aborted) {
 					const sortedProducts = sortOrder(
 						data.products,
@@ -39,6 +38,7 @@ const ProductPageClientSide = () => {
 						order,
 						priceRange,
 					);
+					setOrigData(sortedProducts);
 					setProducts(sortedProducts);
 				}
 			} catch (error) {
@@ -57,52 +57,52 @@ const ProductPageClientSide = () => {
 		return () => abortController.abort();
 	}, []);
 
-	const filterPriceRange = (data, price) => {
-		let filteredProducts = origData;
-		if (data && data.length > 0) {
-			filteredProducts = data.filter((product) => {
-				const productPrice = product.price.replace("$", "");
-				return parseFloat(productPrice) <= parseFloat(price);
-			});
-		}
-		setPriceRange(parseFloat(price));
-		setProducts(filteredProducts);
-		return filteredProducts;
+	const filterProductsByPrice = (products, price) => {
+		return products.filter((product) => {
+			const productPrice = product.price.replace("$", "");
+			return parseFloat(productPrice) <= parseFloat(price);
+		});
 	};
 
-	const onFilterChange = (price) => {
-		sortOrder(origData, sort, order, price);
-	};
-
-	const sortOrder = (dataVal, sortVal, orderVal, priceRange) => {
-		if (!dataVal || dataVal.length < 1) {
-			return dataVal;
-		}
-		const dataFiltered = filterPriceRange(dataVal, priceRange);
-		// Client-side sorting
-		const sortProductsBy = dataFiltered.sort((a, b) => {
+	const sortProducts = (products, sortVal, orderVal) => {
+		const sortedProducts = [...products].sort((a, b) => {
 			if (typeof a[sortVal] === "number" && typeof b[sortVal] === "number") {
 				return a[sortVal] - b[sortVal];
 			} else {
 				return a[sortVal].localeCompare(b[sortVal]);
 			}
 		});
-		// Client-side ordering
+
 		if (orderVal.toLowerCase() === "desc") {
-			sortProductsBy.reverse();
+			sortedProducts.reverse();
 		}
 
-		return sortProductsBy;
+		return sortedProducts;
+	};
+
+	const sortOrder = (dataVal, sortVal, orderVal, priceRange) => {
+		if (!dataVal || dataVal.length < 1) {
+			return dataVal;
+		}
+
+		const filteredProducts = filterProductsByPrice(dataVal, priceRange);
+		return sortProducts(filteredProducts, sortVal, orderVal);
+	};
+
+	const onFilterChange = (price) => {
+		const filteredProducts = filterProductsByPrice(origData, price);
+		setPriceRange(parseFloat(price));
+		setProducts(sortOrder(filteredProducts, sort, order, price));
 	};
 
 	const onSortChange = (e) => {
-		const sortVal = e.target.value + "";
+		const sortVal = e.target.value.toString();
 		setSort(sortVal);
 		setProducts(sortOrder(products, sortVal, order, priceRange));
 	};
 
 	const onOrderChange = (e) => {
-		const orderVal = e.target.value + "";
+		const orderVal = e.target.value.toString();
 		setOrder(orderVal);
 		setProducts(sortOrder(products, sort, orderVal, priceRange));
 	};
