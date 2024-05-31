@@ -34,11 +34,11 @@ const ProductPriceFilter = ({ onRangeChange, price }) => {
 						justifyContent: "space-between",
 					}}
 				>
-					<option value="20" label="20"></option>
-					<option value="40" label="40"></option>
-					<option value="60" label="60"></option>
-					<option value="80" label="80"></option>
-					<option value="100" label="100"></option>
+					<option value="20" label="20" />
+					<option value="40" label="40" />
+					<option value="60" label="60" />
+					<option value="80" label="80" />
+					<option value="100" label="100" />
 				</datalist>
 			</div>
 		</div>

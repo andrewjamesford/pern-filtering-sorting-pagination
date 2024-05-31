@@ -26,7 +26,7 @@ const ProductPageClientSide = () => {
 			try {
 				setLoading(true);
 				setError(false);
-				const result = await api.getProductsClientSide();
+				const result = await api.getProductsJSONClientSide();
 				if (!result.ok) {
 					throw new Error("API Error");
 				}

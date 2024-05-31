@@ -26,7 +26,7 @@ const ProductPageServerSide = () => {
 			try {
 				setLoading(true);
 				setError(false);
-				const result = await api.getProductsServerSide();
+				const result = await api.getAllProducts();
 				if (!result.ok) {
 					throw new Error("API Error");
 				}

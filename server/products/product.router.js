@@ -22,27 +22,27 @@ router.get(
 	},
 );
 
-const queryParamsPaginationSchema = Joi.object().keys({
+const queryParamsSchema = Joi.object().keys({
 	sortOrder: Joi.string().pattern(/^[a-z0-9 ]+$/i).allow(null, ""),
 	direction: Joi.string().pattern(/^[a-z0-9 ]+$/i).allow(null, ""),
 	page: Joi.number().integer().min(0).required(),
 	pageSize: Joi.number().integer().min(1).required(),
-	searchString: Joi.string().pattern(/^[a-z0-9 ]+$/i).allow(null, ""),
+	priceRange: Joi.number().integer().min(20).max(100).required(),
 });
 
 router.get(
-	"/pagination/",
-	queryParamValidationMiddleware(queryParamsPaginationSchema),
+	"/data/",
+	queryParamValidationMiddleware(queryParamsSchema),
 	async (req, res, next) => {
 		try {
-			const { sortOrder = "id", direction = "asc", page = 0, pageSize = 5, searchString = "" } = req.query;
+			const { sortOrder = "name", direction = "asc", page = 0, pageSize = 5, priceRange = 20 } = req.query;
 
 			const products = await productRepository.getProductsPaginated(
 				sortOrder,
 				direction,
 				page,
 				pageSize,
-				searchString
+				priceRange
 			);
 
 			const responseResults = {

@@ -4,7 +4,7 @@ import ProductList from "./ProductList";
 import ProductSortOrder from "./ProductSortOrder";
 import Loader from "../Loader";
 import ErrorMessage from "../ErrorMessage";
-import ProductSearch from "./ProductSearch";
+import ProductPriceFilter from "./ProductPriceFilter";
 import ProductPagination from "./ProductPagination";
 import ProductItemsPerPage from "./ProductItemsPerPage";
 
@@ -19,7 +19,7 @@ const ProductPageServerSidePagination = () => {
 	const [currentPage, setCurrentPage] = useState(1);
 	const [totalPages, setTotalPages] = useState(1);
 	const [totalRecords, setTotalRecords] = useState(0);
-	const [search, setSearch] = useState("");
+	const [priceRange, setPriceRange] = useState(100);
 
 	useEffect(() => {
 		// We use AbortController (https://developer.mozilla.org/en-US/docs/Web/API/AbortController)
@@ -31,12 +31,12 @@ const ProductPageServerSidePagination = () => {
 			try {
 				setLoading(true);
 				setError(false);
-				const result = await api.getProductsServerSidePagination(
+				const result = await api.getProductsFilterSortPagination(
 					sort,
 					order,
 					page,
 					pageSize,
-					search,
+					priceRange,
 				);
 				if (!result.ok) {
 					throw new Error("API Error");
@@ -62,31 +62,32 @@ const ProductPageServerSidePagination = () => {
 		fetchData();
 
 		return () => abortController.abort();
-	}, [sort, order, page, pageSize, search]);
+	}, [sort, order, page, pageSize, priceRange]);
 
 	const onSortChange = (e) => {
-		setSort(e.target.value + "");
+		setSort(e.target.value.toString());
 	};
 
 	const onOrderChange = (e) => {
-		setOrder(e.target.value + "");
+		setOrder(e.target.value.toString());
 	};
 
 	const onPageChange = (page) => {
 		setPage(Number(page));
 	};
 
-	const onPageSizeChange = (e) => {
-		setPageSize(Number(e));
+	const onPageSizeChange = (pageSize) => {
+		setPageSize(Number(pageSize));
 	};
 
-	const onSearchChange = (searchInput) => {
-		setSearch(searchInput);
+	const onFilterChange = (price) => {
+		setPriceRange(price);
 	};
 
 	return (
 		<main className="flex flex-col">
-			<ProductSearch handleSearch={onSearchChange} />
+			<ProductPriceFilter onRangeChange={onFilterChange} price={priceRange} />
+
 			<ProductSortOrder
 				onSortChange={onSortChange}
 				onOrderChange={onOrderChange}
@@ -95,7 +96,7 @@ const ProductPageServerSidePagination = () => {
 			{loading ? (
 				<Loader />
 			) : (
-				<div>
+				<>
 					<ProductList products={products} />
 					<ProductItemsPerPage
 						selectedValue={pageSize}
@@ -107,7 +108,7 @@ const ProductPageServerSidePagination = () => {
 						currentPage={currentPage}
 						onPageChange={onPageChange}
 					/>
-				</div>
+				</>
 			)}
 		</main>
 	);

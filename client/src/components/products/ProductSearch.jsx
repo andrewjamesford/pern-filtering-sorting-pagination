@@ -18,7 +18,7 @@ const ProductSearch = ({ search = "", handleSearch }) => {
 					setProductSearch(e.target.value);
 				}}
 				onBlur={(e) => {
-					if (e.target.value === "") {
+					if (e.target.value.toString() === "") {
 						// On leave of focus check if search is empty to
 						// handle default search type "X" button
 						handleSearch("");
