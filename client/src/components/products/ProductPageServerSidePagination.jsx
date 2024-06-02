@@ -7,6 +7,7 @@ import ErrorMessage from "../ErrorMessage";
 import ProductPriceFilter from "./ProductPriceFilter";
 import ProductPagination from "./ProductPagination";
 import ProductItemsPerPage from "./ProductItemsPerPage";
+import ProductsDisplayed from "./ProductsDisplayed";
 
 const ProductPageServerSidePagination = () => {
 	const [loading, setLoading] = useState(false);
@@ -104,6 +105,7 @@ const ProductPageServerSidePagination = () => {
 						onValueChange={onPageSizeChange}
 						totalProducts={totalRecords}
 					/>
+					<ProductsDisplayed productCount={products && products.length} />
 					<ProductPagination
 						totalPages={totalPages}
 						currentPage={currentPage}

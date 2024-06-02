@@ -1,0 +1,452 @@
+{
+	"products": [
+		{
+			"id": 48,
+			"name": "Black Puffer Fish 88",
+			"description": "Get the latest Black Puffer Fish 88",
+			"price": "$39.99",
+			"imageName": "image48.png"
+		},
+		{
+			"id": 11,
+			"name": "Black Raised Block White Logo",
+			"description": "The chic Black Raised Block White Logo",
+			"price": "$59.99",
+			"imageName": "image11.png"
+		},
+		{
+			"id": 42,
+			"name": "Blue Basics Puffer",
+			"description": "The elegant Blue Basics Puffer",
+			"price": "$19.99",
+			"imageName": "image42.png"
+		},
+		{
+			"id": 8,
+			"name": "Blue Kawaii Puffer Fish",
+			"description": "The elegant Blue Kawaii Puffer Fish",
+			"price": "$29.99",
+			"imageName": "image08.png"
+		},
+		{
+			"id": 12,
+			"name": "Blue Varsity Puffer",
+			"description": "The elegant Blue Varsity Puffer",
+			"price": "$59.99",
+			"imageName": "image12.png"
+		},
+		{
+			"id": 51,
+			"name": "Brown Puffer Underlined",
+			"description": "Experience the comfort of our Brown Puffer Underlined",
+			"price": "$59.99",
+			"imageName": "image51.png"
+		},
+		{
+			"id": 2,
+			"name": "Dark Blue White Block Logo",
+			"description": "The fashionable Dark Blue White Block Logo",
+			"price": "$49.99",
+			"imageName": "image02.png"
+		},
+		{
+			"id": 39,
+			"name": "Established Then Off White Puffer",
+			"description": "The bold Established Then Off White Puffer",
+			"price": "$59.99",
+			"imageName": "image39.png"
+		},
+		{
+			"id": 53,
+			"name": "Forest Green Puffer Lower Shadow",
+			"description": "Experience the comfort of our Forest Green Puffer Lower Shadow",
+			"price": "$39.99",
+			"imageName": "image53.png"
+		},
+		{
+			"id": 33,
+			"name": "Green Bubbles the Puffer Fish",
+			"description": "The bold Green Bubbles the Puffer Fish",
+			"price": "$29.99",
+			"imageName": "image33.png"
+		},
+		{
+			"id": 38,
+			"name": "Green Cutie Puffer Fish",
+			"description": "The classic Green Cutie Puffer Fish",
+			"price": "$39.99",
+			"imageName": "image38.png"
+		},
+		{
+			"id": 41,
+			"name": "Green Eagle Puffer",
+			"description": "Get the latest Green Eagle Puffer",
+			"price": "$69.99",
+			"imageName": "image41.png"
+		},
+		{
+			"id": 28,
+			"name": "Green Under the Sea Puffer Fish",
+			"description": "The unique Green Under the Sea Puffer Fish",
+			"price": "$39.99",
+			"imageName": "image28.png"
+		},
+		{
+			"id": 10,
+			"name": "Green Underwater Puffer",
+			"description": "Experience the comfort of our Green Underwater Puffer",
+			"price": "$29.99",
+			"imageName": "image10.png"
+		},
+		{
+			"id": 1,
+			"name": "Grey Puffer Fish",
+			"description": "The elegant Grey Puffer Fish",
+			"price": "$49.99",
+			"imageName": "image01.png"
+		},
+		{
+			"id": 55,
+			"name": "Grey Puffer Fish",
+			"description": "The cool Grey Puffer Fish",
+			"price": "$29.99",
+			"imageName": "image55.png"
+		},
+		{
+			"id": 31,
+			"name": "Grey Puffer in Pink College Fish",
+			"description": "The classic Grey Puffer in Pink College Fish",
+			"price": "$29.99",
+			"imageName": "image31.png"
+		},
+		{
+			"id": 22,
+			"name": "Grey Varsity Puffer",
+			"description": "The iconic Grey Varsity Puffer",
+			"price": "$49.99",
+			"imageName": "image22.png"
+		},
+		{
+			"id": 34,
+			"name": "Grey Varsity Puffer on White",
+			"description": "Check out the stylish Grey Varsity Puffer on White",
+			"price": "$39.99",
+			"imageName": "image34.png"
+		},
+		{
+			"id": 7,
+			"name": "Khaki Two Tone Logo",
+			"description": "This is a fantastic Khaki Two Tone Logo",
+			"price": "$29.99",
+			"imageName": "image07.png"
+		},
+		{
+			"id": 52,
+			"name": "Light Blue Puffer Block",
+			"description": "The unique Light Blue Puffer Block",
+			"price": "$69.99",
+			"imageName": "image52.png"
+		},
+		{
+			"id": 3,
+			"name": "Light Grey Puffer Bubbles Fish",
+			"description": "This is a fantastic Light Grey Puffer Bubbles Fish",
+			"price": "$49.99",
+			"imageName": "image03.png"
+		},
+		{
+			"id": 9,
+			"name": "Light Grey Ye Herald Logo",
+			"description": "This is a fantastic Light Grey Ye Herald Logo",
+			"price": "$29.99",
+			"imageName": "image09.png"
+		},
+		{
+			"id": 23,
+			"name": "Lime 3D Block Puffer",
+			"description": "Get the latest Lime 3D Block Puffer",
+			"price": "$19.99",
+			"imageName": "image23.png"
+		},
+		{
+			"id": 5,
+			"name": "Lime Green with Cloud Logo",
+			"description": "The elegant Lime Green with Cloud Logo",
+			"price": "$29.99",
+			"imageName": "image05.png"
+		},
+		{
+			"id": 20,
+			"name": "Lime Master of Puffer",
+			"description": "The modern Lime Master of Puffer",
+			"price": "$59.99",
+			"imageName": "image20.png"
+		},
+		{
+			"id": 57,
+			"name": "Magenta Friendly Puffer Cloud",
+			"description": "The bold Magenta Friendly Puffer Cloud",
+			"price": "$49.99",
+			"imageName": "image57.png"
+		},
+		{
+			"id": 54,
+			"name": "Magenta with Grey Cloud Puffer",
+			"description": "Get the latest Magenta with Grey Cloud Puffer",
+			"price": "$19.99",
+			"imageName": "image54.png"
+		},
+		{
+			"id": 32,
+			"name": "Midnight Stretched Long Puffer",
+			"description": "Experience the comfort of our Midnight Stretched Long Puffer",
+			"price": "$39.99",
+			"imageName": "image32.png"
+		},
+		{
+			"id": 19,
+			"name": "Navy Capital P for Puffer",
+			"description": "The chic Navy Capital P for Puffer",
+			"price": "$59.99",
+			"imageName": "image19.png"
+		},
+		{
+			"id": 59,
+			"name": "Off White Pink Bands Varsity",
+			"description": "The cool Off White Pink Bands Varsity",
+			"price": "$69.99",
+			"imageName": "image59.png"
+		},
+		{
+			"id": 45,
+			"name": "Orange 3D Puffed Puffer",
+			"description": "The timeless Orange 3D Puffed Puffer",
+			"price": "$39.99",
+			"imageName": "image45.png"
+		},
+		{
+			"id": 44,
+			"name": "Orange Puffer Wrapped in a Cloud",
+			"description": "The cool Orange Puffer Wrapped in a Cloud",
+			"price": "$29.99",
+			"imageName": "image44.png"
+		},
+		{
+			"id": 46,
+			"name": "Orange Serif Puffer Logo",
+			"description": "Introducing the new Orange Serif Puffer Logo",
+			"price": "$469.99",
+			"imageName": "image46.png"
+		},
+		{
+			"id": 36,
+			"name": "Orange Tetons Range Puffer",
+			"description": "Check out the stylish Orange Tetons Range Puffer",
+			"price": "$49.99",
+			"imageName": "image36.png"
+		},
+		{
+			"id": 63,
+			"name": "Pink Mean Fluffy Puffer",
+			"description": "The fashionable Pink Mean Fluffy Puffer",
+			"price": "$49.99",
+			"imageName": "image63.png"
+		},
+		{
+			"id": 47,
+			"name": "Pink Prison Break Puffer",
+			"description": "The cool Pink Prison Break Puffer",
+			"price": "$19.99",
+			"imageName": "image47.png"
+		},
+		{
+			"id": 64,
+			"name": "Pink Puffer SWAT",
+			"description": "The unique Pink Puffer SWAT",
+			"price": "$59.99",
+			"imageName": "image64.png"
+		},
+		{
+			"id": 61,
+			"name": "Pink Puffer Skull",
+			"description": "The fashionable Pink Puffer Skull",
+			"price": "$29.99",
+			"imageName": "image61.png"
+		},
+		{
+			"id": 62,
+			"name": "Pink Puffer Wolf",
+			"description": "The unique Pink Puffer Wolf",
+			"price": "$39.99",
+			"imageName": "image62.png"
+		},
+		{
+			"id": 13,
+			"name": "Pink Varsity Puffer",
+			"description": "The sophisticated Pink Varsity Puffer",
+			"price": "$59.99",
+			"imageName": "image13.png"
+		},
+		{
+			"id": 17,
+			"name": "Prison Stripes Puffer",
+			"description": "Get the latest Prison Stripes Puffer",
+			"price": "$59.99",
+			"imageName": "image17.png"
+		},
+		{
+			"id": 18,
+			"name": "Puffer Fish on White",
+			"description": "Experience the comfort of our Puffer Fish on White",
+			"price": "$59.99",
+			"imageName": "image18.png"
+		},
+		{
+			"id": 60,
+			"name": "Purple Puffer Classic",
+			"description": "The modern Purple Puffer Classic",
+			"price": "$19.99",
+			"imageName": "image60.png"
+		},
+		{
+			"id": 14,
+			"name": "Red Cloud Puffer",
+			"description": "The iconic Red Cloud Puffer",
+			"price": "$59.99",
+			"imageName": "image14.png"
+		},
+		{
+			"id": 27,
+			"name": "Red Cloud on Top Logo",
+			"description": "This is a fantastic Red Cloud on Top Logo",
+			"price": "$29.99",
+			"imageName": "image27.png"
+		},
+		{
+			"id": 37,
+			"name": "Red Half Puffer",
+			"description": "Our exclusive Red Half Puffer",
+			"price": "$39.99",
+			"imageName": "image37.png"
+		},
+		{
+			"id": 24,
+			"name": "Red Hiding in the Clouds Puffer",
+			"description": "The bold Red Hiding in the Clouds Puffer",
+			"price": "$39.99",
+			"imageName": "image24.png"
+		},
+		{
+			"id": 16,
+			"name": "Red Logotype Puffer",
+			"description": "Introducing the new Red Logotype Puffer",
+			"price": "$59.99",
+			"imageName": "image16.png"
+		},
+		{
+			"id": 30,
+			"name": "Red Puffer Double Border",
+			"description": "One of our top sellers, the Red Puffer Double Border",
+			"price": "$39.99",
+			"imageName": "image30.png"
+		},
+		{
+			"id": 6,
+			"name": "Red Puffer Mountain Vista",
+			"description": "The cool Red Puffer Mountain Vista",
+			"price": "$29.99",
+			"imageName": "image06.png"
+		},
+		{
+			"id": 21,
+			"name": "Red Script Puffer",
+			"description": "The iconic Red Script Puffer",
+			"price": "$39.99",
+			"imageName": "image21.png"
+		},
+		{
+			"id": 43,
+			"name": "Salmon Varsity Puffer",
+			"description": "The fashionable Salmon Varsity Puffer",
+			"price": "$39.99",
+			"imageName": "image43.png"
+		},
+		{
+			"id": 56,
+			"name": "Simply Puffer in White",
+			"description": "The unique Simply Puffer in White",
+			"price": "$39.99",
+			"imageName": "image56.png"
+		},
+		{
+			"id": 40,
+			"name": "Submerged Puffer in Black",
+			"description": "The fashionable Submerged Puffer in Black",
+			"price": "$39.99",
+			"imageName": "image40.png"
+		},
+		{
+			"id": 58,
+			"name": "Submerged Puffer in Forest Green",
+			"description": "Introducing the new Submerged Puffer in Forest Green",
+			"price": "$59.99",
+			"imageName": "image58.png"
+		},
+		{
+			"id": 35,
+			"name": "Teal Green White Fluffy Puffer",
+			"description": "Introducing the new Teal Green White Fluffy Puffer",
+			"price": "$19.99",
+			"imageName": "image35.png"
+		},
+		{
+			"id": 50,
+			"name": "Teal Puffer Big Shadow",
+			"description": "The fashionable Teal Puffer Big Shadow",
+			"price": "$39.99",
+			"imageName": "image50.png"
+		},
+		{
+			"id": 49,
+			"name": "Turquoise Puffer Outlined",
+			"description": "Introducing the new Turquoise Puffer Outlined",
+			"price": "$29.99",
+			"imageName": "image49.png"
+		},
+		{
+			"id": 25,
+			"name": "White Mono Puffer Fish",
+			"description": "The elegant White Mono Puffer Fish",
+			"price": "$39.99",
+			"imageName": "image25.png"
+		},
+		{
+			"id": 26,
+			"name": "White Serif Puffer",
+			"description": "The innovative White Serif Puffer",
+			"price": "$39.99",
+			"imageName": "image26.png"
+		},
+		{
+			"id": 29,
+			"name": "White with Pink Bands Varsity Puffer",
+			"description": "This is a fantastic White with Pink Bands Varsity Puffer",
+			"price": "$39.99",
+			"imageName": "image29.png"
+		},
+		{
+			"id": 4,
+			"name": "White with Varsity Logo",
+			"description": "The innovative White with Varsity Logo",
+			"price": "$29.99",
+			"imageName": "image04.png"
+		},
+		{
+			"id": 15,
+			"name": "Yellow Cloud Puffer",
+			"description": "Introducing the new Yellow Cloud Puffer",
+			"price": "$29.99",
+			"imageName": "image15.png"
+		}
+	]
+}

@@ -6,6 +6,7 @@ import ProductSortOrder from "./ProductSortOrder";
 import Loader from "../Loader";
 import ErrorMessage from "../ErrorMessage";
 import ProductPriceFilter from "./ProductPriceFilter";
+import ProductsDisplayed from "./ProductsDisplayed";
 
 const ProductPageServerSide = () => {
 	const [loading, setLoading] = useState(false);
@@ -115,7 +116,14 @@ const ProductPageServerSide = () => {
 				onOrderChange={onOrderChange}
 			/>
 			{error && <ErrorMessage message="Error fetching products" />}
-			{loading ? <Loader /> : <ProductList products={products} />}
+			{loading ? (
+				<Loader />
+			) : (
+				<>
+					<ProductList products={products} />
+					<ProductsDisplayed productCount={products && products.length} />
+				</>
+			)}
 		</main>
 	);
 };
