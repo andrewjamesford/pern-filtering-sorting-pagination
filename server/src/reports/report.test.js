@@ -1,4 +1,4 @@
-const path = require("path");
+import * as path from "node:path";
 const jestOpenAPI = require("jest-openapi").default;
 
 jest.mock("../middleware/authorizationMiddleware");

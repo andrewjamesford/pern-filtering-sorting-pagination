@@ -3,7 +3,6 @@ const db = require("../db");
 module.exports = {
 	getProducts: async () => {
 		try {
-
 			const result = await db.query(
 				`SELECT
           p.id,
@@ -13,7 +12,7 @@ module.exports = {
           pi.name AS "imageName"
         FROM product p
         LEFT JOIN product_image pi ON p.product_image_id = pi.id
-				ORDER BY p.name`
+				ORDER BY p.name`,
 			);
 
 			return result.rows;
@@ -21,9 +20,14 @@ module.exports = {
 			throw Error(error);
 		}
 	},
-	getProductsPaginated: async (sortOrder, direction, page, pageSize, priceRange) => {
+	getProductsPaginated: async (
+		sortOrder,
+		direction,
+		page,
+		pageSize,
+		priceRange,
+	) => {
 		try {
-
 			let sortOrderParam = "p.name";
 			const validSortOrders = ["name", "description", "price"];
 			if (validSortOrders.includes(sortOrder.toLowerCase())) {
@@ -51,11 +55,12 @@ module.exports = {
             ORDER BY ${sortOrderParam} ${directionParam}
             LIMIT $1
 						OFFSET $2`,
-				[pageSize, offset, priceRange]
+				[pageSize, offset, priceRange],
 			);
 			// Query to get the total number of records
 			const totalRecordsResult = await db.query(
-				`SELECT COUNT(*) AS total FROM product p WHERE p.price <= $1`, [priceRange]
+				"SELECT COUNT(*) AS total FROM product p WHERE p.price <= $1",
+				[priceRange],
 			);
 
 			const totalRecords = totalRecordsResult.rows[0].total;

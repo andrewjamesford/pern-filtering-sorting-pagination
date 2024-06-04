@@ -2,14 +2,13 @@
 	"name": "server",
 	"version": "1.0.0",
 	"description": "",
-	"main": "index.js",
+	"main": "./src/index.js",
 	"scripts": {
-		"start": "node index.js",
-		"start:dev": "nodemon --inspect=0.0.0.0:9229 index.js",
+		"start": "node ./src/index.js",
+		"start:dev": "nodemon --inspect=0.0.0.0:9229 ./src/index.js",
 		"test": "jest --watchAll --colors --verbose",
-		"lint:js": "eslint .",
-		"prettier:check": "prettier --check .",
-		"prettier:write": "prettier --write ."
+		"lint": "biome lint --error-on-warnings ./src",
+		"format": "biome format --write ./src"
 	},
 	"author": "DI",
 	"license": "ISC",
@@ -24,15 +23,8 @@
 		"swagger-ui-express": "4.5.0"
 	},
 	"devDependencies": {
-		"eslint": "^7.32.0",
-		"eslint-config-prettier": "^8.3.0",
-		"eslint-config-standard": "^16.0.3",
-		"eslint-plugin-import": "^2.25.2",
-		"eslint-plugin-jest": "^25.2.3",
-		"eslint-plugin-node": "^11.1.0",
-		"eslint-plugin-promise": "^5.1.1",
+		"@biomejs/biome": "1.7.3",
 		"jest": "^27.3.1",
-		"prettier": "3.2.5",
 		"jest-openapi": "^0.14.0",
 		"nodemon": "^2.0.13",
 		"supertest": "^6.1.6"

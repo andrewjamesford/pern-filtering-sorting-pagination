@@ -2,16 +2,16 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const path = require("path");
+import * as path from "node:path";
 const yaml = require("js-yaml");
-const fs = require("fs");
+import * as fs from "node:fs";
 const swaggerUi = require("swagger-ui-express");
 const productRouter = require("./products/product.router");
 const reportRouter = require("./reports/report.router");
 const errorHandlerMiddleware = require("./middleware/errorHandlerMiddleware");
 
 const swaggerDocument = yaml.load(
-	fs.readFileSync(path.join(__dirname, "./apispec.yaml"), "utf8"),
+	fs.readFileSync(path.join(__dirname, "../apispec.yaml"), "utf8"),
 );
 
 // middleware
