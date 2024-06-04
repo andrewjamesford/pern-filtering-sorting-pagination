@@ -43,6 +43,7 @@ const ProductPageServerSide = () => {
 					setProducts(sortedProducts);
 				}
 			} catch (error) {
+				console.error(error);
 				if (!abortController.signal.aborted) {
 					setError(true);
 				}
@@ -56,7 +57,7 @@ const ProductPageServerSide = () => {
 		fetchData();
 
 		return () => abortController.abort();
-	}, []);
+	}, [sort, order, priceRange]);
 
 	const filterProductsByPrice = (products, price) => {
 		return products.filter((product) => {

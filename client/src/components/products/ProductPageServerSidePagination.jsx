@@ -50,6 +50,7 @@ const ProductPageServerSidePagination = () => {
 					setTotalRecords(data.products.totalRecords);
 				}
 			} catch (error) {
+				console.error(error);
 				if (!abortController.signal.aborted) {
 					setError(true);
 				}
