@@ -6,7 +6,9 @@ const Pagination = ({ totalPages, currentPage, onPageChange }) => {
 				<button
 					key={page}
 					onClick={() => onPageChange(page)}
-					className={`mx-1 px-3 py-2 bg-white rounded-lg focus:outline-none ${Number(page) === Number(currentPage) ? "border-2 border-black" : ""}`}
+					className={`mx-1 px-3 py-2 bg-white rounded-lg focus:outline-none ${
+						Number(page) === Number(currentPage) ? "border-2 border-black" : ""
+					}`}
 				>
 					{page}
 				</button>
