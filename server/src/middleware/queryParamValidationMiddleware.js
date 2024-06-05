@@ -11,4 +11,4 @@ const queryParamValidationMiddleware = (schema) => (req, res, next) => {
 	}
 };
 
-module.exports = queryParamValidationMiddleware;
+export default queryParamValidationMiddleware;

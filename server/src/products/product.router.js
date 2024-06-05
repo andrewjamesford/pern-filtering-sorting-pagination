@@ -1,8 +1,9 @@
-const express = require("express");
-const Joi = require("joi");
+import express from "express";
+import Joi from "joi";
+import queryParamValidationMiddleware from "../middleware/queryParamValidationMiddleware.js";
+import productRepository from "./product.repository.js";
+
 const router = express.Router();
-const queryParamValidationMiddleware = require("../middleware/queryParamValidationMiddleware");
-const productRepository = require("./product.repository");
 
 router.get("/", async (req, res, next) => {
 	try {
@@ -62,4 +63,4 @@ router.get(
 	},
 );
 
-module.exports = router;
+export default router;
