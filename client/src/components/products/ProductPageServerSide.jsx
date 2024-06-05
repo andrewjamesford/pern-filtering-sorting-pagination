@@ -1,11 +1,10 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import api from "../../api";
-import ProductList from "./ProductList";
-import ProductSortOrder from "./ProductSortOrder";
-import Loader from "../Loader";
 import ErrorMessage from "../ErrorMessage";
+import Loader from "../Loader";
+import ProductList from "./ProductList";
 import ProductPriceFilter from "./ProductPriceFilter";
+import ProductSortOrder from "./ProductSortOrder";
 import ProductsDisplayed from "./ProductsDisplayed";
 
 const ProductPageServerSide = () => {
@@ -62,7 +61,7 @@ const ProductPageServerSide = () => {
 	const filterProductsByPrice = (products, price) => {
 		return products.filter((product) => {
 			const productPrice = product.price.replace("$", "");
-			return parseFloat(productPrice) <= parseFloat(price);
+			return Number.parseFloat(productPrice) <= Number.parseFloat(price);
 		});
 	};
 
@@ -70,9 +69,8 @@ const ProductPageServerSide = () => {
 		const sortedProducts = [...products].sort((a, b) => {
 			if (typeof a[sortVal] === "number" && typeof b[sortVal] === "number") {
 				return a[sortVal] - b[sortVal];
-			} else {
-				return a[sortVal].localeCompare(b[sortVal]);
 			}
+			return a[sortVal].localeCompare(b[sortVal]);
 		});
 
 		if (orderVal.toLowerCase() === "desc") {
@@ -93,7 +91,7 @@ const ProductPageServerSide = () => {
 
 	const onFilterChange = (price) => {
 		const filteredProducts = filterProductsByPrice(origData, price);
-		setPriceRange(parseFloat(price));
+		setPriceRange(Number.parseFloat(price));
 		setProducts(sortOrder(filteredProducts, sort, order, price));
 	};
 
@@ -122,7 +120,7 @@ const ProductPageServerSide = () => {
 			) : (
 				<>
 					<ProductList products={products} />
-					<ProductsDisplayed productCount={products && products.length} />
+					{products && <ProductsDisplayed productCount={products.length} />}
 				</>
 			)}
 		</main>

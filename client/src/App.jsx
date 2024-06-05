@@ -1,10 +1,10 @@
-import { Routes, Route } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
+import Footer from "./components/Footer";
 import Header from "./components/Header";
+import NotFoundPage from "./components/NotFoundPage";
 import ProductPageClientSide from "./components/products/ProductPageClientSide";
 import ProductPageServerSide from "./components/products/ProductPageServerSide";
 import ProductPageServerSidePagination from "./components/products/ProductPageServerSidePagination";
-import NotFoundPage from "./components/NotFoundPage";
-import Footer from "./components/Footer";
 
 const App = () => {
 	return (

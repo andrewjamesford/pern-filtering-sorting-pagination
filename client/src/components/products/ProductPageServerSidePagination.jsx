@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import api from "../../api";
-import ProductList from "./ProductList";
-import ProductSortOrder from "./ProductSortOrder";
-import Loader from "../Loader";
 import ErrorMessage from "../ErrorMessage";
-import ProductPriceFilter from "./ProductPriceFilter";
-import ProductPagination from "./ProductPagination";
+import Loader from "../Loader";
 import ProductItemsPerPage from "./ProductItemsPerPage";
+import ProductList from "./ProductList";
+import ProductPagination from "./ProductPagination";
+import ProductPriceFilter from "./ProductPriceFilter";
+import ProductSortOrder from "./ProductSortOrder";
 import ProductsDisplayed from "./ProductsDisplayed";
 
 const ProductPageServerSidePagination = () => {
@@ -106,7 +106,7 @@ const ProductPageServerSidePagination = () => {
 						onValueChange={onPageSizeChange}
 						totalProducts={totalRecords}
 					/>
-					<ProductsDisplayed productCount={products && products.length} />
+					<ProductsDisplayed productCount={products?.length} />
 					<ProductPagination
 						totalPages={totalPages}
 						currentPage={currentPage}

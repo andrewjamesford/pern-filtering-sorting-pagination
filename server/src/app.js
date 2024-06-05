@@ -1,8 +1,8 @@
+import cors from "cors";
 import dotenv from "dotenv";
 import express from "express";
-import cors from "cors";
-import productRouter from "./products/product.router.js";
 import errorHandlerMiddleware from "./middleware/errorHandlerMiddleware.js";
+import productRouter from "./products/product.router.js";
 
 dotenv.config();
 

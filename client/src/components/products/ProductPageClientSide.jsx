@@ -1,9 +1,8 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { useCallback, useState } from "react";
-import ProductList from "./ProductList";
-import ProductSortOrder from "./ProductSortOrder";
-import ProductPriceFilter from "./ProductPriceFilter";
 import origData from "../../data/products.json";
+import ProductList from "./ProductList";
+import ProductPriceFilter from "./ProductPriceFilter";
+import ProductSortOrder from "./ProductSortOrder";
 import ProductsDisplayed from "./ProductsDisplayed";
 
 const ProductPageClientSide = () => {
@@ -13,9 +12,9 @@ const ProductPageClientSide = () => {
 	const [products, setProducts] = useState(origData.products);
 
 	const filterProductsByPrice = useCallback((products, price) => {
-		const parsedPrice = parseFloat(price);
+		const parsedPrice = Number.parseFloat(price);
 		return products.filter((product) => {
-			const productPrice = parseFloat(product.price.replace("$", ""));
+			const productPrice = Number.parseFloat(product.price.replace("$", ""));
 			return productPrice <= parsedPrice;
 		});
 	}, []);
@@ -44,7 +43,7 @@ const ProductPageClientSide = () => {
 	);
 
 	const onFilterChange = (price) => {
-		const parsedPrice = parseFloat(price);
+		const parsedPrice = Number.parseFloat(price);
 		setPriceRange(parsedPrice);
 		const filteredProducts = filterProductsByPrice(
 			origData.products,
@@ -75,7 +74,7 @@ const ProductPageClientSide = () => {
 			{products && (
 				<>
 					<ProductList products={products} />
-					<ProductsDisplayed productCount={products && products.length} />
+					<ProductsDisplayed productCount={products?.length} />
 				</>
 			)}
 		</main>
