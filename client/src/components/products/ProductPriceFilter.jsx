@@ -27,12 +27,7 @@ const ProductPriceFilter = ({ onRangeChange, price }) => {
 
 				<datalist
 					id="values"
-					className="w-full flex white-text"
-					style={{
-						color: "white",
-						fontSize: ".5rem",
-						justifyContent: "space-between",
-					}}
+					className="w-full flex white-text justify-between text-white text-sm"
 				>
 					<option value="20" label="20" />
 					<option value="40" label="40" />
