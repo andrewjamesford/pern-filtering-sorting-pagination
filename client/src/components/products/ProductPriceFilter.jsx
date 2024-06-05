@@ -18,7 +18,7 @@ const ProductPriceFilter = ({ onRangeChange, price }) => {
 					step={20}
 					list="values"
 					value={selectedValue}
-					className="text-white w-full max-w-md bg-white"
+					className="text-white w-full max-w-md bg-white cursor-pointer accent-white"
 					onChange={(e) => {
 						setSelectedValue(e.target.value);
 						onRangeChange(e.target.value);
