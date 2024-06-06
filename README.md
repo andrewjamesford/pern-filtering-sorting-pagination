@@ -1,6 +1,8 @@
 # Filtering Sorting and Pagination
 
-An example of filtering, sorting and pagination in a NodeJS and ReactJS application.
+An example PERN app demonstrating filtering sorting and pagination with a mock e-commerce store
+
+Written in NodeJS and ReactJS application.
 
 ## Dependencies
 
