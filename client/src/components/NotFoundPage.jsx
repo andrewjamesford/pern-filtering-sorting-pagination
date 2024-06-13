@@ -1,4 +1,4 @@
-const NotFoundPage = () => {
+function NotFoundPage() {
 	return (
 		<main className="">
 			<div>
@@ -6,6 +6,6 @@ const NotFoundPage = () => {
 			</div>
 		</main>
 	);
-};
+}
 
 export default NotFoundPage;

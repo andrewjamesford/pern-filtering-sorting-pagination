@@ -1,5 +1,6 @@
 import { useState } from "react";
-const ProductSearch = ({ search = "", handleSearch }) => {
+
+function ProductSearch({ search = "", handleSearch }) {
 	// Using useState hook to manage the state of productSearch
 	const [productSearch, setProductSearch] = useState(search);
 
@@ -47,6 +48,6 @@ const ProductSearch = ({ search = "", handleSearch }) => {
 			</button>
 		</div>
 	);
-};
+}
 
 export default ProductSearch;

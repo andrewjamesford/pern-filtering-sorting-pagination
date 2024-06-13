@@ -1,6 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 
-const Header = () => {
+function Header() {
 	return (
 		<header className="flex flex-col items-center">
 			<Link to="/" className="block">
@@ -60,6 +60,6 @@ const Header = () => {
 			</nav>
 		</header>
 	);
-};
+}
 
 export default Header;

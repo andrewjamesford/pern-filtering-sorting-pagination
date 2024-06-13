@@ -1,4 +1,4 @@
-const ProductSortOrder = ({ onSortChange, onOrderChange }) => {
+function ProductSortOrder({ onSortChange, onOrderChange }) {
 	return (
 		<div className="flex flex-col items-center">
 			<div className="grid grid-cols-1 md:grid-cols-2 w-full max-w-5xl py-10 md:py-5 items-center gap-4 px-4 lg:px-0">
@@ -32,6 +32,6 @@ const ProductSortOrder = ({ onSortChange, onOrderChange }) => {
 			</div>
 		</div>
 	);
-};
+}
 
 export default ProductSortOrder;

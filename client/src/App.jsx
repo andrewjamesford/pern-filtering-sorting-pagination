@@ -6,7 +6,7 @@ import ProductPageClientSide from "./components/products/ProductPageClientSide";
 import ProductPageServerSide from "./components/products/ProductPageServerSide";
 import ProductPageServerSidePagination from "./components/products/ProductPageServerSidePagination";
 
-const App = () => {
+function App() {
 	return (
 		<div className="">
 			<Header />
@@ -23,6 +23,6 @@ const App = () => {
 			<Footer />
 		</div>
 	);
-};
+}
 
 export default App;

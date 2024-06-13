@@ -1,4 +1,4 @@
-const Product = ({ name, description, price = 0, imageName }) => {
+function Product({ name, description, price = 0, imageName }) {
 	return (
 		<li>
 			<div className="flex flex-col">
@@ -25,6 +25,6 @@ const Product = ({ name, description, price = 0, imageName }) => {
 			</div>
 		</li>
 	);
-};
+}
 
 export default Product;

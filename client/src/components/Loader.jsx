@@ -1,4 +1,4 @@
-const Loader = () => {
+function Loader() {
 	return (
 		<div
 			title="Loading"
@@ -15,6 +15,6 @@ const Loader = () => {
 			</svg>
 		</div>
 	);
-};
+}
 
 export default Loader;

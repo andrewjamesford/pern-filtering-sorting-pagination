@@ -9,7 +9,7 @@ import ProductPriceFilter from "./ProductPriceFilter";
 import ProductSortOrder from "./ProductSortOrder";
 import ProductsDisplayed from "./ProductsDisplayed";
 
-const ProductPageServerSidePagination = () => {
+function ProductPageServerSidePagination() {
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(false);
 	const [products, setProducts] = useState([]);
@@ -116,6 +116,6 @@ const ProductPageServerSidePagination = () => {
 			)}
 		</main>
 	);
-};
+}
 
 export default ProductPageServerSidePagination;

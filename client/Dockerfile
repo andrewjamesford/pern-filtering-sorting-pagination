@@ -4,5 +4,5 @@ WORKDIR /app
 COPY package.json /app
 	RUN ["npm", "install"]
 COPY . /app
-EXPOSE 4000 4010
+EXPOSE 4000 4010 42423
 CMD ["npm", "run", "dev"]

@@ -1,8 +1,8 @@
-const ProductItemsPerPage = ({
+function ProductItemsPerPage({
 	selectedValue = 5,
 	onValueChange,
 	totalProducts,
-}) => {
+}) {
 	return (
 		<div className="flex flex-col items-center px-4 md:px-10 max-w-md mx-auto">
 			<div className="w-full border-b-2 border-black appearance-none bg-transparent py-2 grid grid-cols-2 mb-4">
@@ -23,6 +23,6 @@ const ProductItemsPerPage = ({
 			<p className="text-sm">{totalProducts} Products Total</p>
 		</div>
 	);
-};
+}
 
 export default ProductItemsPerPage;

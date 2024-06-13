@@ -6,6 +6,7 @@ services:
       - "4000:4000"
       - "4010:4010"
       - "9222:9222"
+      - "42423:42423"
     depends_on:
       - server
     volumes:

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const Footer = () => {
+function Footer() {
 	return (
 		<footer className="w-full flex justify-center items-center border-t-2 border-black mt-4">
 			<img
@@ -21,6 +21,6 @@ const Footer = () => {
 			<img src="/favicon.svg" alt="Puffer" className="w-10 h-10 mx-4" />
 		</footer>
 	);
-};
+}
 
 export default Footer;

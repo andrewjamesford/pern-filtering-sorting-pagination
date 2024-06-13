@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const ProductPriceFilter = ({ onRangeChange, price }) => {
+function ProductPriceFilter({ onRangeChange, price }) {
 	const [selectedValue, setSelectedValue] = useState(price);
 
 	return (
@@ -38,6 +38,6 @@ const ProductPriceFilter = ({ onRangeChange, price }) => {
 			</div>
 		</div>
 	);
-};
+}
 
 export default ProductPriceFilter;
