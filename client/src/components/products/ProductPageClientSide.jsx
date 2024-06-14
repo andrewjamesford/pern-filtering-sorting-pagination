@@ -4,6 +4,7 @@ import ProductList from "./ProductList";
 import ProductPriceFilter from "./ProductPriceFilter";
 import ProductSortOrder from "./ProductSortOrder";
 import ProductsDisplayed from "./ProductsDisplayed";
+import debounce from "lodash/debounce";
 
 function ProductPageClientSide() {
 	const [sort, setSort] = useState("name");
