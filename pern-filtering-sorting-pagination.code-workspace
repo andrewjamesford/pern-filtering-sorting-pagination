@@ -23,10 +23,7 @@
 			"packages/": true
 		},
 		"jest.autoEnable": false,
-		"jest.disabledWorkspaceFolders": [
-			"DB",
-			"ROOT"
-		],
+		"jest.disabledWorkspaceFolders": ["DB", "ROOT"],
 		"sqltools.connections": [
 			{
 				"previewLimit": 50,
@@ -44,7 +41,9 @@
 		"recommendations": [
 			"ms-azuretools.vscode-docker",
 			"mtxr.sqltools",
-			"vasubasraj.flashpost",
+			"mtxr.sqltools-driver-pg",
+			"mtxr.sqltools-driver-pg-native",
+			"mtxr.sqltools-driver-pg-legacy"
 		]
 	}
 }

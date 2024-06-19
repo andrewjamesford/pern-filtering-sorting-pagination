@@ -13,7 +13,6 @@ function ProductPageServerSide() {
 	const [products, setProducts] = useState([]);
 	const [sort, setSort] = useState("name");
 	const [order, setOrder] = useState("asc");
-	const [origData, setOrigData] = useState([]);
 	const [priceRange, setPriceRange] = useState(100);
 
 	useEffect(() => {
@@ -32,14 +31,13 @@ function ProductPageServerSide() {
 				}
 				const data = await result.json();
 				if (!abortController.signal.aborted) {
-					const sortedProducts = sortOrder(
-						data.products,
-						sort,
-						order,
-						priceRange,
+					setProducts(
+						sortProducts(
+							filterProductsByPrice(data.products, priceRange),
+							sort,
+							order,
+						),
 					);
-					setOrigData(sortedProducts);
-					setProducts(sortedProducts);
 				}
 			} catch (error) {
 				console.error(error);
@@ -59,52 +57,39 @@ function ProductPageServerSide() {
 	}, [sort, order, priceRange]);
 
 	const filterProductsByPrice = (products, price) => {
-		return products.filter((product) => {
-			const productPrice = product.price.replace("$", "");
-			return Number.parseFloat(productPrice) <= Number.parseFloat(price);
+		const parsedPrice = Number.parseFloat(price);
+
+		const filteredProducts = products.filter((product) => {
+			const productPrice = Number.parseFloat(product.price.replace("$", ""));
+			return productPrice <= parsedPrice;
 		});
+		return filteredProducts;
 	};
 
 	const sortProducts = (products, sortVal, orderVal) => {
-		const sortedProducts = [...products].sort((a, b) => {
-			if (typeof a[sortVal] === "number" && typeof b[sortVal] === "number") {
-				return a[sortVal] - b[sortVal];
-			}
-			return a[sortVal].localeCompare(b[sortVal]);
+		return [...products].sort((a, b) => {
+			const compareVal =
+				typeof a[sortVal] === "number" && typeof b[sortVal] === "number"
+					? a[sortVal] - b[sortVal]
+					: a[sortVal].localeCompare(b[sortVal]);
+
+			return orderVal.toLowerCase() === "desc" ? -compareVal : compareVal;
 		});
-
-		if (orderVal.toLowerCase() === "desc") {
-			sortedProducts.reverse();
-		}
-
-		return sortedProducts;
-	};
-
-	const sortOrder = (dataVal, sortVal, orderVal, priceRange) => {
-		if (!dataVal || dataVal.length < 1) {
-			return dataVal;
-		}
-
-		const filteredProducts = filterProductsByPrice(dataVal, priceRange);
-		return sortProducts(filteredProducts, sortVal, orderVal);
 	};
 
 	const onFilterChange = (price) => {
-		const filteredProducts = filterProductsByPrice(origData, price);
-		setPriceRange(Number.parseFloat(price));
-		setProducts(sortOrder(filteredProducts, sort, order, price));
+		const parsedPrice = Number.parseFloat(price);
+		setPriceRange(parsedPrice);
 	};
 
 	const onSortChange = (e) => {
 		const sortVal = e.target.value.toString();
 		setSort(sortVal);
-		setProducts(sortOrder(products, sortVal, order, priceRange));
 	};
 
 	const onOrderChange = (e) => {
 		const orderVal = e.target.value.toString();
 		setOrder(orderVal);
-		setProducts(sortOrder(products, sort, orderVal, priceRange));
 	};
 
 	return (
