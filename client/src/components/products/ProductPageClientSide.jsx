@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import origData from "../../data/products.json";
 import ProductList from "./ProductList";
 import ProductPriceFilter from "./ProductPriceFilter";
@@ -11,7 +11,7 @@ function ProductPageClientSide() {
 	const [priceRange, setPriceRange] = useState(100);
 	const [products, setProducts] = useState(origData.products);
 
-	const filterProductsByPrice = (products, price) => {
+	const filterProductsByPrice = useCallback((products, price) => {
 		const parsedPrice = Number.parseFloat(price);
 
 		const filteredProducts = products.filter((product) => {
@@ -19,9 +19,9 @@ function ProductPageClientSide() {
 			return productPrice <= parsedPrice;
 		});
 		return filteredProducts;
-	};
+	}, []);
 
-	const sortProducts = (products, sortVal, orderVal) => {
+	const sortProducts = useCallback((products, sortVal, orderVal) => {
 		return [...products].sort((a, b) => {
 			const compareVal =
 				typeof a[sortVal] === "number" && typeof b[sortVal] === "number"
@@ -30,17 +30,17 @@ function ProductPageClientSide() {
 
 			return orderVal.toLowerCase() === "desc" ? -compareVal : compareVal;
 		});
-	};
+	}, []);
 
 	useEffect(() => {
 		const initalProductsSortedAndFiltered = () => {
 			setProducts(
-				sortProducts(filterProductsByPrice(products, priceRange), sort, order),
+				sortProducts(filterProductsByPrice(origData.products, priceRange), sort, order),
 			);
 		};
 
 		initalProductsSortedAndFiltered();
-	}, [priceRange, sort, order]);
+	}, [priceRange, sort, order, filterProductsByPrice, sortProducts]);
 
 	const onFilterChange = (price) => {
 		const parsedPrice = Number.parseFloat(price);

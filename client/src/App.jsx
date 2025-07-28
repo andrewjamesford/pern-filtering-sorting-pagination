@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import ErrorBoundary from "./components/ErrorBoundary";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import NotFoundPage from "./components/NotFoundPage";
@@ -8,20 +9,22 @@ import ProductPageServerSidePagination from "./components/products/ProductPageSe
 
 function App() {
 	return (
-		<div className="">
-			<Header />
-			<Routes>
-				<Route exact path="/" element={<ProductPageClientSide />} />
-				<Route exact path="/pants" element={<ProductPageServerSide />} />
-				<Route
-					exact
-					path="/tshirts"
-					element={<ProductPageServerSidePagination />}
-				/>
-				<Route path="*" element={<NotFoundPage />} />
-			</Routes>
-			<Footer />
-		</div>
+		<ErrorBoundary>
+			<div className="">
+				<Header />
+				<Routes>
+					<Route exact path="/" element={<ProductPageClientSide />} />
+					<Route exact path="/pants" element={<ProductPageServerSide />} />
+					<Route
+						exact
+						path="/tshirts"
+						element={<ProductPageServerSidePagination />}
+					/>
+					<Route path="*" element={<NotFoundPage />} />
+				</Routes>
+				<Footer />
+			</div>
+		</ErrorBoundary>
 	);
 }
 
